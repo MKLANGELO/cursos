@@ -479,7 +479,7 @@
   .quiz-stage{min-height:0}
   .quiz-step{display:none;animation:quizIn .4s cubic-bezier(.22,1,.36,1)}
   .quiz-step-active{display:block}
-  .quiz-intro-image{height:230px;background:linear-gradient(180deg,rgba(250,250,247,0) 48%,#fafaf7 100%),url('amigurumicatolico/images/processo-artesanal.webp') center/cover}
+  .quiz-intro-image{height:230px;background:linear-gradient(180deg,rgba(250,250,247,0) 48%,#fafaf7 100%),url('processo-artesanal.webp') center/cover}
   .quiz-content{padding:30px 25px 34px;text-align:center}
   .quiz-count,.quiz-badge,.quiz-context{font-family:'Cinzel',serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
   .quiz-context{display:block;margin:0 0 9px;font-size:.61rem;letter-spacing:.08em}
@@ -505,37 +505,6 @@
   @keyframes quizCardIn{from{opacity:0;transform:translateY(10px) scale(.992)}to{opacity:1;transform:translateY(0) scale(1)}}
   @media(prefers-reduced-motion:reduce){.quiz-overlay,.quiz-box,.quiz-skip,.quiz-progress-bar,.quiz-step,.quiz-option,.quiz-btn,.quiz-transition,.quiz-transition-inner{animation:none;transition:none}}
   @media(max-height:650px){.quiz-intro-image{height:175px}.quiz-content{padding-top:21px;padding-bottom:23px}}
-  /* AJUSTE EXCLUSIVO DE TIPOGRAFIA */
-  body{font-family:'Inter',Arial,sans-serif;font-size:16px;line-height:1.58;color:#2a2119}
-  h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-.025em}
-  h2{font-size:clamp(1.85rem,6vw,2.65rem);font-weight:700;line-height:1.12}
-  .kicker{font-family:'Inter',Arial,sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.15em}
-  .lead{font-family:'Inter',Arial,sans-serif;font-size:1rem;font-style:normal;line-height:1.65}
-  #topbar{font-family:'Inter',Arial,sans-serif;font-weight:700;font-size:.78rem;line-height:1.4}
-  .btn{font-family:'Inter',Arial,sans-serif;font-weight:800;font-size:.94rem;letter-spacing:0;line-height:1.25}
-  .badge{font-family:'Inter',Arial,sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.09em}
-  .hero-h1{font-family:'Playfair Display',Georgia,serif;font-weight:800;letter-spacing:-.035em;line-height:1.02}
-  .hero-h1 .hero-product{font-weight:800}
-  .hero-h1 .hero-tail{font-family:'Inter',Arial,sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.24}
-  .hero-sub{font-family:'Inter',Arial,sans-serif;font-size:1rem;font-style:normal;line-height:1.65}
-  .vant-card strong,.receive-card strong,.filtro-box h3,.piece b,.bonus-body h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-.015em}
-  .receive-n,.roi-item .v,.roi-arrow,.acervo-n,.bonus-free,.plan-price{font-family:'Playfair Display',Georgia,serif;font-weight:800}
-  .bonus-tag,.bonus-total-row,.review-count,.countdown-label,.countdown-digit,.plan-star,.plan-name,.garantia-tag{font-family:'Inter',Arial,sans-serif;font-weight:800}
-  .faq-q{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-.012em;line-height:1.35}
-  .plan-pack{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-.018em}
-  .plan-price small{font-family:'Inter',Arial,sans-serif}
-  #garantia p{font-family:'Inter',Arial,sans-serif;font-size:.94rem;font-style:normal;line-height:1.65}
-  .footer-brand h3{font-family:'Playfair Display',Georgia,serif;font-weight:700}
-  @media(max-width:639px){
-    body{font-size:15px}
-    h2{font-size:1.82rem;line-height:1.1}
-    .hero-h1{font-size:2.05rem;line-height:1.01}
-    .hero-h1 .hero-tail{font-size:.52em;line-height:1.26;margin-top:10px}
-    .hero-sub{font-size:.94rem;line-height:1.58}
-    .btn{font-size:.86rem}
-    .faq-q{font-size:.95rem}
-    .plan-pack{font-size:1.08rem}
-  }
 </style>
 </head>
 <body>
@@ -624,10 +593,15 @@
     </div>
     <div class="hero-img">
       <div class="hero-video" id="heroVideo">
-        <button class="video-facade" id="videoFacade" type="button" aria-label="Reproduzir v&iacute;deo do Curso de Amigurumi Cat&oacute;lico">
-          <img src="https://i.ytimg.com/vi/u_JL-LGyqDc/maxresdefault.jpg" alt="Santinho cat&oacute;lico em amigurumi apresentado no v&iacute;deo" width="720" height="1280" fetchpriority="high" decoding="async">
-          <span class="video-play" aria-hidden="true"></span>
-        </button>
+        <iframe 
+            src="https://www.youtube.com/embed/u_JL-LGyqDc?autoplay=1&rel=0" 
+            title="Vídeo do Curso" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
       </div>
     </div>
     <div class="hero-actions">
@@ -637,7 +611,7 @@
         <li><strong>Acesso imediato e vital&iacute;cio</strong> para estudar no seu ritmo</li>
       </ul>
       <div class="hero-cta">
-        <a href="amigurumicatolico.html#ofertas" class="btn">Quero come&ccedil;ar o curso</a>
+        <a href="#ofertas" class="btn">Quero come&ccedil;ar o curso</a>
         <div class="trust-row">
           <span>Pagamento &uacute;nico</span>
           <span>Garantia de 7 dias</span>
@@ -705,7 +679,7 @@
         <p>Acompanhe a montagem e o acabamento at&eacute; concluir o seu amigurumi.</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:28px"><a href="amigurumicatolico.html#ofertas" class="btn">Quero aprender criando</a></div>
+    <div style="text-align:center;margin-top:28px"><a href="#ofertas" class="btn">Quero aprender criando</a></div>
   </div>
 </section>
 
@@ -743,18 +717,18 @@
     <div class="pieces-shell">
       <div class="pieces-viewport" id="piecesViewport" aria-label="Galeria de santinhos em movimento">
         <div class="pieces" id="piecesTrack">
-          <div class="piece"><img class="piece-img" data-src="images/nossa-senhora-1.webp" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora</b></div>
-          <div class="piece"><img class="piece-img" data-src="images/nossa-senhora-fatima.webp" alt="Nossa Senhora de F&aacute;tima em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora de F&aacute;tima</b></div>
-          <div class="piece"><img class="piece-img" data-src="images/sao-jose.webp" alt="S&atilde;o Jos&eacute; em amigurumi" width="304" height="600" decoding="async"><b>S&atilde;o Jos&eacute;</b></div>
-          <div class="piece"><img class="piece-img" data-src="images/santo-antonio.webp" alt="Santo Ant&ocirc;nio em amigurumi" width="450" height="600" decoding="async"><b>Santo Ant&ocirc;nio</b></div>
-          <div class="piece"><img class="piece-img" data-src="images/sao-jorge.webp" alt="S&atilde;o Jorge em amigurumi" width="570" height="562" decoding="async"><b>S&atilde;o Jorge</b></div>
-          <div class="piece"><img class="piece-img" data-src="images/nossa-senhora-gracas.webp" alt="Nossa Senhora das Gra&ccedil;as em amigurumi" width="580" height="580" decoding="async"><b>Nossa Senhora das Gra&ccedil;as</b></div>
-          <div class="piece"><img class="piece-img" data-src="images/anjo-2.webp" alt="Anjo cat&oacute;lico em amigurumi" width="456" height="580" decoding="async"><b>Anjo da Guarda</b></div>
-          <div class="piece"><img class="piece-img" data-src="images/anjo-3.webp" alt="Anjo de f&eacute; em amigurumi" width="600" height="600" decoding="async"><b>Anjo de F&eacute;</b></div>
+          <div class="piece"><img class="piece-img" src="nossa-senhora-1.webp" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora</b></div>
+          <div class="piece"><img class="piece-img" src="nossa-senhora-fatima.webp" alt="Nossa Senhora de F&aacute;tima em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora de F&aacute;tima</b></div>
+          <div class="piece"><img class="piece-img" src="sao-jose.webp" alt="S&atilde;o Jos&eacute; em amigurumi" width="304" height="600" decoding="async"><b>S&atilde;o Jos&eacute;</b></div>
+          <div class="piece"><img class="piece-img" src="santo-antonio.webp" alt="Santo Ant&ocirc;nio em amigurumi" width="450" height="600" decoding="async"><b>Santo Ant&ocirc;nio</b></div>
+          <div class="piece"><img class="piece-img" src="sao-jorge.webp" alt="S&atilde;o Jorge em amigurumi" width="570" height="562" decoding="async"><b>S&atilde;o Jorge</b></div>
+          <div class="piece"><img class="piece-img" src="nossa-senhora-gracas.webp" alt="Nossa Senhora das Gra&ccedil;as em amigurumi" width="580" height="580" decoding="async"><b>Nossa Senhora das Gra&ccedil;as</b></div>
+          <div class="piece"><img class="piece-img" src="anjo-2.webp" alt="Anjo cat&oacute;lico em amigurumi" width="456" height="580" decoding="async"><b>Anjo da Guarda</b></div>
+          <div class="piece"><img class="piece-img" src="anjo-3.webp" alt="Anjo de f&eacute; em amigurumi" width="600" height="600" decoding="async"><b>Anjo de F&eacute;</b></div>
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:30px"><a href="amigurumicatolico.html#ofertas" class="btn">Quero escolher meu primeiro projeto</a></div>
+    <div style="text-align:center;margin-top:30px"><a href="#ofertas" class="btn">Quero escolher meu primeiro projeto</a></div>
   </div>
 </section>
 
@@ -780,7 +754,7 @@
     <div class="bonus-grid four">
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 1</span>
-        <img class="bonus-img" src="amigurumicatolico/images/bonus-primeiros-passos.webp" alt="Primeiros Passos no Amigurumi" width="800" height="800" loading="lazy" decoding="async">
+        <img class="bonus-img" src="bonus-primeiros-passos.webp" alt="Primeiros Passos no Amigurumi" width="800" height="800" loading="lazy" decoding="async">
         <div class="bonus-body">
           <h3>Primeiros Passos no Amigurumi</h3>
           <p>Materiais, pontos, abrevia&ccedil;&otilde;es, montagem e acabamento para come&ccedil;ar com seguran&ccedil;a.</p>
@@ -789,7 +763,7 @@
       </div>
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 2</span>
-        <img class="bonus-img" src="amigurumicatolico/images/bonus-olhos-realistas.webp" alt="Guia de Olhos Realistas" width="800" height="800" loading="lazy" decoding="async">
+        <img class="bonus-img" src="bonus-olhos-realistas.webp" alt="Guia de Olhos Realistas" width="800" height="800" loading="lazy" decoding="async">
         <div class="bonus-body">
           <h3>Guia de Olhos Realistas</h3>
           <p>T&eacute;cnicas para criar express&otilde;es mais bonitas e valorizar o acabamento das suas pe&ccedil;as.</p>
@@ -798,7 +772,7 @@
       </div>
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 3</span>
-        <img class="bonus-img" src="amigurumicatolico/images/bonus-reversiveis.webp" alt="Cole&ccedil;&atilde;o de Amigurumis Revers&iacute;veis" width="800" height="800" loading="lazy" decoding="async">
+        <img class="bonus-img" src="bonus-reversiveis.webp" alt="Cole&ccedil;&atilde;o de Amigurumis Revers&iacute;veis" width="800" height="800" loading="lazy" decoding="async">
         <div class="bonus-body">
           <h3>Amigurumis Revers&iacute;veis</h3>
           <p>Receitas criativas que se transformam e revelam duas pe&ccedil;as diferentes.</p>
@@ -807,7 +781,7 @@
       </div>
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 4</span>
-        <img class="bonus-img" src="amigurumicatolico/images/bonus-sensoriais.webp" alt="Cole&ccedil;&atilde;o de Amigurumis Sensoriais" width="800" height="800" loading="lazy" decoding="async">
+        <img class="bonus-img" src="bonus-sensoriais.webp" alt="Cole&ccedil;&atilde;o de Amigurumis Sensoriais" width="800" height="800" loading="lazy" decoding="async">
         <div class="bonus-body">
           <h3>Amigurumis Sensoriais</h3>
           <p>Projetos com formas, texturas e elementos pensados para estimular e encantar.</p>
@@ -827,13 +801,13 @@
     <h2>Amplie seu aprendizado com um universo de amigurumi</h2>
     <p class="lead">Al&eacute;m dos santinhos cat&oacute;licos, o acesso Completo libera dezenas de cole&ccedil;&otilde;es escritas de bonecas, bichinhos, personagens e pe&ccedil;as tem&aacute;ticas.</p>
     <div class="acervo-grid">
-      <div class="acervo-card"><img class="acervo-img" src="amigurumicatolico/images/colecao-bonecas-bichinhos.webp" alt="Cole&ccedil;&atilde;o de bonecas e bichinhos em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Bonecas e bichinhos</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="amigurumicatolico/images/colecao-harry-potter.webp" alt="Cole&ccedil;&atilde;o inspirada em Harry Potter em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Cole&ccedil;&atilde;o Harry Potter</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="amigurumicatolico/images/colecao-natalina.webp" alt="Cole&ccedil;&atilde;o natalina em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Tem&aacute;tica natalina</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="amigurumicatolico/images/colecao-personagens-desenhos.webp" alt="Cole&ccedil;&atilde;o de personagens e desenhos em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Personagens e desenhos</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-bonecas-bichinhos.webp" alt="Cole&ccedil;&atilde;o de bonecas e bichinhos em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Bonecas e bichinhos</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-harry-potter.webp" alt="Cole&ccedil;&atilde;o inspirada em Harry Potter em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Cole&ccedil;&atilde;o Harry Potter</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-natalina.webp" alt="Cole&ccedil;&atilde;o natalina em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Tem&aacute;tica natalina</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-personagens-desenhos.webp" alt="Cole&ccedil;&atilde;o de personagens e desenhos em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Personagens e desenhos</span></div></div>
     </div>
     <p class="acervo-footnote">Mais variedade para praticar, presentear e criar novas pe&ccedil;as durante muito tempo.</p>
-    <div style="text-align:center;margin-top:20px"><a href="amigurumicatolico.html#ofertas" class="btn">Quero o Curso Completo</a></div>
+    <div style="text-align:center;margin-top:20px"><a href="#ofertas" class="btn">Quero o Curso Completo</a></div>
   </div>
 </section>
 
@@ -955,7 +929,7 @@
 <section id="roberta">
   <div class="wrap about-grid">
     <div class="about-img">
-      <img src="amigurumicatolico/images/processo-artesanal.webp" alt="M&atilde;os produzindo um santinho cat&oacute;lico em amigurumi" width="720" height="900" loading="lazy" decoding="async">
+      <img src="processo-artesanal.webp" alt="M&atilde;os produzindo um santinho cat&oacute;lico em amigurumi" width="720" height="900" loading="lazy" decoding="async">
     </div>
     <div>
       <span class="kicker">F&eacute;, criatividade e trabalho manual</span>
@@ -970,7 +944,7 @@
     <span class="kicker" style="color:#dcc39c">Comece sua primeira cria&ccedil;&atilde;o</span>
     <h2>Sua f&eacute; pode ganhar forma pelas suas pr&oacute;prias m&atilde;os</h2>
     <p class="lead">Entre no Curso de Amigurumi Cat&oacute;lico, escolha seu primeiro santinho e aprenda na pr&aacute;tica, no seu ritmo.</p>
-    <div style="text-align:center;margin-top:24px"><a href="amigurumicatolico.html#ofertas" class="btn btn-gold">Quero come&ccedil;ar o curso</a></div>
+    <div style="text-align:center;margin-top:24px"><a href="#ofertas" class="btn btn-gold">Quero come&ccedil;ar o curso</a></div>
   </div>
 </section>
 
@@ -984,123 +958,6 @@
     <p>&copy; 2026 Curso de Amigurumi Cat&oacute;lico. Todos os direitos reservados. Resultados variam conforme a pr&aacute;tica de cada pessoa.</p>
   </div>
 </footer>
-
-<div class="quiz-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Quiz de boas-vindas">
-  <div class="quiz-box">
-    <button class="quiz-skip" id="quizSkip" type="button">Pular &rarr;</button>
-    <div class="quiz-progress" aria-hidden="true"><span class="quiz-progress-bar" id="quizProgressBar"></span></div>
-    <div class="quiz-stage" id="quizStage">
-      <section class="quiz-step quiz-step-active" data-step="intro">
-        <div class="quiz-intro-image" role="img" aria-label="M&atilde;os produzindo um santinho em amigurumi"></div>
-        <div class="quiz-content">
-          <span class="quiz-context">Antes de conhecer o Curso de Amigurumi Cat&oacute;lico</span>
-          <span class="quiz-badge">Descubra em 30 segundos</span>
-          <span class="quiz-symbol" aria-hidden="true">&#10013;</span>
-          <h2 class="quiz-title">O que suas m&atilde;os podem criar quando f&eacute; e criatividade se encontram?</h2>
-          <p class="quiz-text">Responda tr&ecirc;s perguntas r&aacute;pidas e descubra qual caminho combina mais com voc&ecirc;.</p>
-          <button class="quiz-btn quiz-next" type="button">Come&ccedil;ar</button>
-        </div>
-      </section>
-      <section class="quiz-step" data-step="q1">
-        <div class="quiz-content">
-          <span class="quiz-count">Pergunta 1 de 3</span>
-          <h2 class="quiz-title">Quando voc&ecirc; v&ecirc; um santinho em amigurumi, qual pensamento mais combina com voc&ecirc;?</h2>
-          <div class="quiz-options">
-            <button class="quiz-option quiz-next" type="button" data-perfil="A" data-cheer="Toda pe&ccedil;a especial come&ccedil;a com um primeiro ponto." data-cheer-sub="Voc&ecirc; n&atilde;o precisa saber tudo para come&ccedil;ar.">Acho lindo, mas n&atilde;o sei se conseguiria fazer.</button>
-            <button class="quiz-option quiz-next" type="button" data-perfil="B" data-cheer="Toda pe&ccedil;a especial come&ccedil;a com um primeiro ponto." data-cheer-sub="Sua criatividade pode carregar ainda mais significado.">J&aacute; fa&ccedil;o croch&ecirc; e adoraria criar pe&ccedil;as de f&eacute;.</button>
-            <button class="quiz-option quiz-next" type="button" data-perfil="C" data-cheer="Toda pe&ccedil;a especial come&ccedil;a com um primeiro ponto." data-cheer-sub="Uma nova possibilidade pode nascer das suas m&atilde;os.">Imagino os presentes e encomendas que eu poderia produzir.</button>
-          </div>
-        </div>
-      </section>
-      <section class="quiz-step" data-step="q2">
-        <div class="quiz-content">
-          <span class="quiz-count">Pergunta 2 de 3</span>
-          <h2 class="quiz-title">O que mais dificulta transformar essa vontade em uma pe&ccedil;a pronta?</h2>
-          <div class="quiz-options">
-            <button class="quiz-option quiz-next" type="button" data-cheer="Aprender fica mais leve quando cada etapa est&aacute; diante dos seus olhos." data-cheer-sub="Ponto por ponto, aquilo que parecia dif&iacute;cil come&ccedil;a a ganhar forma.">N&atilde;o saber por onde come&ccedil;ar.</button>
-            <button class="quiz-option quiz-next" type="button" data-cheer="Aprender fica mais leve quando cada etapa est&aacute; diante dos seus olhos." data-cheer-sub="Ponto por ponto, aquilo que parecia dif&iacute;cil come&ccedil;a a ganhar forma.">Ter receio de errar a montagem ou o acabamento.</button>
-            <button class="quiz-option quiz-next" type="button" data-cheer="Aprender fica mais leve quando cada etapa est&aacute; diante dos seus olhos." data-cheer-sub="Ponto por ponto, aquilo que parecia dif&iacute;cil come&ccedil;a a ganhar forma.">N&atilde;o encontrar projetos completos e organizados.</button>
-            <button class="quiz-option quiz-next" type="button" data-cheer="Aprender fica mais leve quando cada etapa est&aacute; diante dos seus olhos." data-cheer-sub="Ponto por ponto, aquilo que parecia dif&iacute;cil come&ccedil;a a ganhar forma.">J&aacute; fa&ccedil;o algumas pe&ccedil;as, mas quero ampliar minhas possibilidades.</button>
-          </div>
-        </div>
-      </section>
-      <section class="quiz-step" data-step="q3">
-        <div class="quiz-content">
-          <span class="quiz-count">Pergunta 3 de 3</span>
-          <h2 class="quiz-title">Qual dessas situa&ccedil;&otilde;es mais combina com o que voc&ecirc; sente hoje?</h2>
-          <div class="quiz-options">
-            <button class="quiz-option quiz-next" type="button" data-cheer="Reconhecer o que falta tamb&eacute;m &eacute; uma forma de come&ccedil;ar." data-cheer-sub="Seu resultado est&aacute; pronto.">Quero come&ccedil;ar, mas ainda duvido se vou conseguir.</button>
-            <button class="quiz-option quiz-next" type="button" data-cheer="Reconhecer o que falta tamb&eacute;m &eacute; uma forma de come&ccedil;ar." data-cheer-sub="Seu resultado est&aacute; pronto.">Quero criar presentes especiais, mas me falta um caminho claro.</button>
-            <button class="quiz-option quiz-next" type="button" data-cheer="Reconhecer o que falta tamb&eacute;m &eacute; uma forma de come&ccedil;ar." data-cheer-sub="Seu resultado est&aacute; pronto.">Minha f&eacute; me inspira, mas ainda n&atilde;o sei transform&aacute;-la em uma pe&ccedil;a.</button>
-            <button class="quiz-option quiz-next" type="button" data-cheer="Reconhecer o que falta tamb&eacute;m &eacute; uma forma de come&ccedil;ar." data-cheer-sub="Seu resultado est&aacute; pronto.">Quero produzir mais modelos, mas me falta um acervo organizado.</button>
-          </div>
-        </div>
-      </section>
-      <section class="quiz-step" data-step="fimA">
-        <div class="quiz-content">
-          <span class="quiz-badge">Encontramos o seu caminho</span><span class="quiz-symbol" aria-hidden="true">&#129526;</span>
-          <h2 class="quiz-title">M&atilde;os prontas para o primeiro ponto</h2>
-          <p class="quiz-text">Voc&ecirc; n&atilde;o precisa come&ccedil;ar sabendo tudo. Seu caminho &eacute; acompanhar projetos claros e descobrir, ponto por ponto, que tamb&eacute;m consegue. O Curso de Amigurumi Cat&oacute;lico pode ser o seu pr&oacute;ximo passo, com mais de 150 projetos completos para aprender no seu ritmo.</p>
-          <button class="quiz-btn quiz-finish" type="button">&#128073; Quero descobrir como come&ccedil;ar</button>
-          <p class="quiz-trust">Acesso digital e vital&iacute;cio &middot; Garantia de 7 dias</p>
-        </div>
-      </section>
-      <section class="quiz-step" data-step="fimB">
-        <div class="quiz-content">
-          <span class="quiz-badge">Encontramos o seu caminho</span><span class="quiz-symbol" aria-hidden="true">&#129526;</span>
-          <h2 class="quiz-title">Criadora de pe&ccedil;as de f&eacute;</h2>
-          <p class="quiz-text">Voc&ecirc; j&aacute; sente prazer em criar e quer colocar ainda mais significado no seu trabalho. O Curso de Amigurumi Cat&oacute;lico pode ser o seu pr&oacute;ximo passo para ampliar o repert&oacute;rio com mais de 150 projetos que unem t&eacute;cnica, devo&ccedil;&atilde;o e carinho.</p>
-          <button class="quiz-btn quiz-finish" type="button">&#128073; Quero descobrir como come&ccedil;ar</button>
-          <p class="quiz-trust">Acesso digital e vital&iacute;cio &middot; Garantia de 7 dias</p>
-        </div>
-      </section>
-      <section class="quiz-step" data-step="fimC">
-        <div class="quiz-content">
-          <span class="quiz-badge">Encontramos o seu caminho</span><span class="quiz-symbol" aria-hidden="true">&#129526;</span>
-          <h2 class="quiz-title">Talento que pode ganhar novos caminhos</h2>
-          <p class="quiz-text">Voc&ecirc; enxerga al&eacute;m da pe&ccedil;a pronta: imagina presentes, encomendas e novas possibilidades. O Curso de Amigurumi Cat&oacute;lico pode ser o seu pr&oacute;ximo passo para criar com variedade; e o Acervo Completo amplia ainda mais as possibilidades.</p>
-          <button class="quiz-btn quiz-finish" type="button">&#128073; Quero descobrir como come&ccedil;ar</button>
-          <p class="quiz-trust">Acesso digital e vital&iacute;cio &middot; Garantia de 7 dias</p>
-        </div>
-      </section>
-    </div>
-    <div class="quiz-transition" id="quizTransition" aria-hidden="true">
-      <div class="quiz-transition-inner">
-        <span class="quiz-trans-symbol" aria-hidden="true">&#129526;</span>
-        <p class="quiz-trans-msg"></p>
-        <p class="quiz-trans-sub"></p>
-        <button class="quiz-btn" id="quizTransNext" type="button">Continuar &rarr;</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="ds-overlay" aria-hidden="true">
-  <div id="ds-modal" role="dialog" aria-modal="true" aria-labelledby="ds-title">
-    <div class="ds-head"><span id="ds-title">Amplie seu curso por apenas R$6</span><button class="ds-close" type="button" onclick="closeDownsell()" aria-label="Fechar oferta">&times;</button></div>
-    <div class="ds-body">
-      <p class="ds-intro">Voc&ecirc; escolheu o Curso B&aacute;sico por R$19,90. Nesta etapa, pode liberar tamb&eacute;m o <strong>Acervo Completo por apenas R$25,90.</strong></p>
-      <div class="ds-offer">
-        <span class="ds-badge">POR APENAS R$6 A MAIS</span>
-        <div class="ds-title">Curso + Acervo Completo</div>
-        <p class="ds-sub">Santinhos Cat&oacute;licos + dezenas de cole&ccedil;&otilde;es de amigurumi</p>
-        <ul class="ds-features">
-          <li><strong>Tudo do Curso B&aacute;sico:</strong> mais de 150 projetos completos de santinhos</li>
-          <li><strong>Acervo completo</strong> com dezenas de cole&ccedil;&otilde;es de amigurumi</li>
-          <li>Bonecas, bichinhos, personagens, revers&iacute;veis e itens de decora&ccedil;&atilde;o</li>
-          <li>Temas de magia, princesas, her&oacute;is, Natal, P&aacute;scoa e naninhas</li>
-          <li>Amigurumis sensoriais, tapetes, almofadas e acess&oacute;rios</li>
-          <li>Quatro extens&otilde;es: primeiros passos, olhos realistas, revers&iacute;veis e sensoriais</li>
-          <li>Acesso vital&iacute;cio e entrega imediata</li>
-        </ul>
-        <div class="ds-price-row"><span class="ds-old">R$29,90</span><span class="ds-new">R$25,90</span></div>
-        <p class="ds-save">Amplie do B&aacute;sico para o Completo por apenas R$6 a mais</p>
-        <a href="https://pay.cakto.com.br/33ukesp" data-checkout="completo-oferta" class="btn ds-primary" style="width:100%">SIM, QUERO AMPLIAR MEU CURSO</a>
-      </div>
-      <a href="https://pay.cakto.com.br/3d7j6a6_1001007" data-checkout="basico" class="ds-decline">N&atilde;o, quero somente o Curso B&aacute;sico por R$19,90</a>
-    </div>
-  </div>
-</div>
 
 <script>
 (function(){
@@ -1133,106 +990,23 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
   if(!wasOpen) item.classList.add('open');
 }
-(function(){
-  var facade=document.getElementById('videoFacade');
-  var container=document.getElementById('heroVideo');
-  if(!facade||!container) return;
-  facade.addEventListener('click',function(){
-    var iframe=document.createElement('iframe');
-    iframe.src='https://www.youtube.com/embed/u_JL-LGyqDc?autoplay=1&controls=1&playsinline=1&rel=0&enablejsapi=1&origin='+encodeURIComponent(window.location.origin);
-    iframe.title='V\u00eddeo do Curso de Amigurumi Cat\u00f3lico';
-    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.referrerPolicy='strict-origin-when-cross-origin';
-    iframe.allowFullscreen=true;
-    container.appendChild(iframe);
-    facade.remove();
-
-    var touchToggle=document.createElement('button');
-    touchToggle.type='button';
-    touchToggle.className='video-click-toggle';
-    touchToggle.setAttribute('aria-label','Pausar ou continuar o v\u00eddeo');
-    var videoPlaying=true;
-    touchToggle.addEventListener('click',function(){
-      iframe.contentWindow.postMessage(JSON.stringify({
-        event:'command',
-        func:videoPlaying?'pauseVideo':'playVideo',
-        args:[]
-      }),'*');
-      videoPlaying=!videoPlaying;
-    });
-    container.appendChild(touchToggle);
-  },{once:true});
-})();
-function closeDownsell(){
-  var overlay = document.getElementById('ds-overlay');
-  overlay.classList.remove('open');
-  overlay.setAttribute('aria-hidden','true');
-}
-document.getElementById('btn-basico').addEventListener('click', function(e){
-  e.preventDefault();
-  var overlay = document.getElementById('ds-overlay');
-  overlay.classList.add('open');
-  overlay.setAttribute('aria-hidden','false');
-  overlay.querySelector('.ds-close').focus();
-});
-document.getElementById('ds-overlay').addEventListener('click', function(e){
-  if(e.target === this) closeDownsell();
-});
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') closeDownsell();
-});
-(function(){
-  var qs = window.location.search.replace(/^\?/, '');
-  if(!qs) return;
-  document.querySelectorAll('a[data-checkout]').forEach(function(a){
-    var href = a.getAttribute('href');
-    if(!href || href.indexOf('pay.cakto.com.br')===-1) return;
-    a.setAttribute('href', href + (href.indexOf('?')===-1 ? '?' : '&') + qs);
-  });
-})();
 
 (function(){
   var track = document.getElementById('piecesTrack');
   if(!track) return;
 
-  var shell = track.closest('.pieces-shell');
   var originals = Array.prototype.slice.call(track.querySelectorAll('.piece'));
-  var started = false;
-
-  function loadCarousel(){
-    if(started) return;
-    started = true;
-
-    var loads = originals.map(function(card){
-      var img = card.querySelector('.piece-img');
-      return new Promise(function(resolve){
-        img.addEventListener('load', resolve, {once:true});
-        img.addEventListener('error', resolve, {once:true});
-        img.src = img.getAttribute('data-src');
-        img.removeAttribute('data-src');
-      });
-    });
-
-    Promise.all(loads).then(function(){
-      originals.forEach(function(card){
-        var clone = card.cloneNode(true);
-        clone.setAttribute('aria-hidden','true');
-        track.appendChild(clone);
-      });
-      track.classList.add('is-ready');
-    });
-  }
-
-  if('IntersectionObserver' in window && shell){
-    var observer = new IntersectionObserver(function(entries){
-      if(!entries[0].isIntersecting) return;
-      observer.disconnect();
-      loadCarousel();
-    }, {rootMargin:'1000px 0px'});
-    observer.observe(shell);
-  } else {
-    loadCarousel();
-  }
+  originals.forEach(function(card){
+    var img = card.querySelector('.piece-img');
+    if(img && img.hasAttribute('data-src')){
+      img.src = img.getAttribute('data-src');
+      img.removeAttribute('data-src');
+    }
+    var clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden','true');
+    track.appendChild(clone);
+  });
+  track.classList.add('is-ready');
 })();
 
 (function(){
@@ -1295,145 +1069,6 @@ document.addEventListener('keydown', function(e){
   }, {passive:true});
   window.addEventListener('resize', function(){ update(nearestIndex()); });
   update(0);
-})();
-
-(function(){
-  var overlay=document.getElementById('quizOverlay');
-  if(!overlay) return;
-  var steps=overlay.querySelectorAll('.quiz-step');
-  var progress=document.getElementById('quizProgressBar');
-  var transition=document.getElementById('quizTransition');
-  var transMsg=transition.querySelector('.quiz-trans-msg');
-  var transSub=transition.querySelector('.quiz-trans-sub');
-  var transNext=document.getElementById('quizTransNext');
-  var quizNextMap={intro:'q1',q1:'q2',q2:'q3',q3:null};
-  var quizPerfil='A';
-  var quizBusy=false;
-  var quizPendingGo=null;
-  var lockedScrollY=0;
-  var lastFocused=null;
-
-  function currentName(){
-    var active=overlay.querySelector('.quiz-step-active');
-    return active?active.getAttribute('data-step'):'intro';
-  }
-  function focusCurrent(){
-    var target=transition.classList.contains('show')?transNext:overlay.querySelector('.quiz-step-active button');
-    if(target){
-      try{target.focus({preventScroll:true});}catch(error){target.focus();}
-    }
-  }
-  function showQuizStep(name){
-    Array.prototype.forEach.call(steps,function(step){
-      step.classList.toggle('quiz-step-active',step.getAttribute('data-step')===name);
-    });
-    var widths={intro:'0%',q1:'33%',q2:'66%',q3:'100%',fimA:'100%',fimB:'100%',fimC:'100%'};
-    progress.style.width=widths[name]||'0%';
-    overlay.scrollTop=0;
-    focusCurrent();
-  }
-  function lockQuizBodyScroll(){
-    lockedScrollY=window.scrollY||window.pageYOffset;
-    document.body.style.position='fixed';
-    document.body.style.top='-'+lockedScrollY+'px';
-    document.body.style.left='0';
-    document.body.style.right='0';
-    document.body.style.width='100%';
-  }
-  function unlockQuizBodyScroll(){
-    document.body.style.position='';
-    document.body.style.top='';
-    document.body.style.left='';
-    document.body.style.right='';
-    document.body.style.width='';
-    window.scrollTo(0,lockedScrollY);
-  }
-  function markQuizDone(){
-    try{sessionStorage.setItem('amigurumiQuizDone','1');}catch(error){}
-  }
-  function openQuiz(){
-    lastFocused=document.activeElement;
-    lockQuizBodyScroll();
-    overlay.classList.add('active');
-    overlay.setAttribute('aria-hidden','false');
-    showQuizStep('intro');
-  }
-  function closeQuiz(goTop){
-    markQuizDone();
-    transition.classList.remove('show');
-    overlay.classList.remove('active');
-    overlay.setAttribute('aria-hidden','true');
-    unlockQuizBodyScroll();
-    if(lastFocused&&typeof lastFocused.focus==='function') lastFocused.focus();
-    if(goTop){
-      window.requestAnimationFrame(function(){
-        document.getElementById('hero').scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    }
-  }
-  function enableOptions(){
-    Array.prototype.forEach.call(overlay.querySelectorAll('.quiz-option'),function(btn){btn.disabled=false;});
-    quizBusy=false;
-  }
-  function showTransition(btn,destination){
-    transMsg.textContent=btn.getAttribute('data-cheer')||'';
-    transSub.textContent=btn.getAttribute('data-cheer-sub')||'';
-    transNext.textContent=currentName()==='q3'?'Ver meu resultado \u2192':'Continuar \u2192';
-    transition.classList.add('show');
-    transition.setAttribute('aria-hidden','false');
-    quizPendingGo=destination;
-    focusCurrent();
-  }
-  overlay.addEventListener('click',function(event){
-    var btn=event.target.closest('.quiz-next');
-    if(!btn||quizBusy) return;
-    quizBusy=true;
-    Array.prototype.forEach.call(overlay.querySelectorAll('.quiz-option'),function(option){option.disabled=true;});
-    var step=currentName();
-    if(step==='q1'&&btn.getAttribute('data-perfil')) quizPerfil=btn.getAttribute('data-perfil');
-    var next=quizNextMap[step];
-    var destination=next||('fim'+quizPerfil);
-    if(step==='intro'){
-      showQuizStep(destination);
-      enableOptions();
-      return;
-    }
-    showTransition(btn,destination);
-  });
-  transNext.addEventListener('click',function(){
-    if(!quizPendingGo) return;
-    transition.classList.remove('show');
-    transition.setAttribute('aria-hidden','true');
-    showQuizStep(quizPendingGo);
-    quizPendingGo=null;
-    enableOptions();
-  });
-  document.getElementById('quizSkip').addEventListener('click',function(){closeQuiz(false);});
-  Array.prototype.forEach.call(overlay.querySelectorAll('.quiz-finish'),function(btn){
-    btn.addEventListener('click',function(){closeQuiz(true);});
-  });
-  document.addEventListener('keydown',function(event){
-    if(!overlay.classList.contains('active')) return;
-    if(event.key==='Escape'){
-      event.preventDefault();
-      closeQuiz(false);
-      return;
-    }
-    if(event.key==='Tab'){
-      var focusables=Array.prototype.filter.call(overlay.querySelectorAll('button:not([disabled])'),function(button){
-        return button.offsetParent!==null;
-      });
-      if(!focusables.length) return;
-      var first=focusables[0];
-      var last=focusables[focusables.length-1];
-      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
-      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
-    }
-  });
-  var QUIZ_ENABLED=false;
-  var quizDone=false;
-  try{quizDone=sessionStorage.getItem('amigurumiQuizDone')==='1';}catch(error){}
-  if(QUIZ_ENABLED&&!quizDone) openQuiz();
 })();
 </script>
 

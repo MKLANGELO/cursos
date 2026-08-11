@@ -119,15 +119,6 @@
   @media(min-width:900px){ .hero-img{max-width:320px} }
   .hero-video{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:12px;background:linear-gradient(155deg,var(--vinho-dk),#321018);box-shadow:0 20px 46px rgba(74,13,23,.2);border:1px solid var(--line)}
   .hero-video iframe{position:absolute;z-index:3;inset:0;width:100%;height:100%;border:0;pointer-events:auto;touch-action:auto}
-  .video-facade{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:#241a10;cursor:pointer;overflow:hidden}
-  .video-facade img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .25s ease,filter .25s ease}
-  .video-facade::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.16));pointer-events:none}
-  .video-facade:hover img{transform:scale(1.015);filter:brightness(.96)}
-  .video-play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:#f20d32;color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.3)}
-  .video-play::before{content:'';display:block;margin-left:5px;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:19px solid currentColor}
-  .video-facade:focus-visible{outline:3px solid var(--gold-pale);outline-offset:-4px}
-  .video-click-toggle{position:absolute;z-index:4;inset:0 0 46px;width:100%;height:auto;padding:0;border:0;background:transparent;cursor:pointer;appearance:none;-webkit-appearance:none}
-  .video-click-toggle:focus-visible{outline:2px solid #fff;outline-offset:-4px}
 
   /* VANTAGENS */
   #vantagens{background:var(--bg2)}
@@ -166,22 +157,19 @@
   .filtro-box.yes li::before{content:"\2713";position:absolute;left:0;color:var(--verde);font-weight:700}
   .filtro-box.no li::before{content:"\2715";position:absolute;left:0;color:#a53a2e;font-weight:700}
 
-  /* DEMONSTRATIVO ABSOLUTO / PECAS */
+  /* DEMONSTRATIVO ABSOLUTO / PECAS (CARROSSEL) */
   #pecas{background:var(--bg2)}
   .pieces-shell{position:relative;max-width:1080px;margin:30px auto 0}
   .pieces-shell::before,.pieces-shell::after{content:"";position:absolute;top:0;bottom:0;width:34px;z-index:2;pointer-events:none}
   .pieces-shell::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
   .pieces-shell::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
   .pieces-viewport{overflow:hidden;padding:4px 2px 14px}
-  .pieces{display:flex;gap:16px;width:max-content;animation:piecesMarquee 22s linear infinite;animation-play-state:paused;opacity:0;transition:opacity .25s ease;will-change:transform}
-  .pieces.is-ready{animation-play-state:running;opacity:1}
-  .pieces-viewport:active .pieces{animation-play-state:paused}
+  .pieces{display:flex;gap:16px;width:max-content;animation:piecesMarquee 22s linear infinite;will-change:transform}
   @keyframes piecesMarquee{to{transform:translateX(calc(-50% - 8px))}}
   .piece{flex:0 0 164px;background:var(--white);border:1px solid var(--line);border-radius:7px;overflow:hidden;text-align:center;box-shadow:0 6px 18px rgba(36,26,16,.09)}
   @media(min-width:640px){.piece{flex-basis:210px}}
   @media(min-width:900px){.piece{flex-basis:240px}}
   .piece-img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--bg2)}
-  @media (prefers-reduced-motion:reduce){.pieces{animation:none}}
   .piece b{display:block;padding:11px 8px;font-family:'Cinzel',serif;font-weight:600;font-size:.86rem}
 
   /* ROI */
@@ -196,20 +184,6 @@
 
   /* BONUS */
   #bonus{background:var(--bg)}
-
-  /* ACERVO GERAL */
-  #acervo-geral{background:var(--vinho-dk);color:#f3e4c8}
-  #acervo-geral h2{color:#fdf2df}
-  #acervo-geral .lead{color:#dcc39c}
-  .acervo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:900px;margin:30px auto 0}
-  @media(min-width:640px){ .acervo-grid{grid-template-columns:repeat(4,1fr)} }
-  .acervo-card{position:relative;aspect-ratio:3/4;border-radius:8px;overflow:hidden;background:var(--vinho);border:1px solid rgba(233,201,119,.3)}
-  .acervo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .acervo-overlay{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;padding:16px 12px;background:linear-gradient(180deg,transparent 0%,transparent 56%,rgba(0,0,0,.72) 100%)}
-  .acervo-n{display:block;font-family:'Cinzel',serif;font-weight:800;font-size:.9rem;color:var(--gold-pale)}
-  .acervo-l{display:block;font-size:.78rem;color:#f3e4c8;margin-top:2px;line-height:1.3}
-  .acervo-footnote{text-align:center;font-size:.84rem;color:#dcc39c;margin-top:22px}
-  .acervo-footnote s{color:#a88b64}
   .bonus-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1080px;margin:30px auto 0}
   @media(min-width:640px){ .bonus-grid{grid-template-columns:1fr 1fr} }
   @media(min-width:1000px){ .bonus-grid{grid-template-columns:repeat(3,1fr)} }
@@ -224,13 +198,24 @@
   .bonus-free{font-family:'Cinzel',serif;font-weight:700;color:var(--verde);font-size:1rem}
   .bonus-total{max-width:1080px;margin:24px auto 0;text-align:center;background:rgba(44,81,56,.06);border:1.5px solid var(--verde);border-radius:6px;padding:20px}
   .bonus-total-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;align-items:center;font-family:'Cinzel',serif;font-size:.92rem}
-  .bonus-total-old{color:var(--ink-soft);text-decoration:line-through}
   .bonus-total-free{color:var(--verde);font-weight:800;font-size:1.2rem}
-  .bonus-card:nth-child(4){grid-column:auto}
   @media(min-width:1000px){
     .bonus-grid.four{grid-template-columns:repeat(4,1fr)}
     .bonus-grid.four .bonus-img{aspect-ratio:1/1;object-fit:contain;background:linear-gradient(180deg,#f8f2e4,#efe2c4)}
   }
+
+  /* ACERVO GERAL */
+  #acervo-geral{background:var(--vinho-dk);color:#f3e4c8}
+  #acervo-geral h2{color:#fdf2df}
+  #acervo-geral .lead{color:#dcc39c}
+  .acervo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:900px;margin:30px auto 0}
+  @media(min-width:640px){ .acervo-grid{grid-template-columns:repeat(4,1fr)} }
+  .acervo-card{position:relative;aspect-ratio:3/4;border-radius:8px;overflow:hidden;background:var(--vinho);border:1px solid rgba(233,201,119,.3)}
+  .acervo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .acervo-overlay{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;padding:16px 12px;background:linear-gradient(180deg,transparent 0%,transparent 56%,rgba(0,0,0,.72) 100%)}
+  .acervo-n{display:block;font-family:'Cinzel',serif;font-weight:800;font-size:.9rem;color:var(--gold-pale)}
+  .acervo-l{display:block;font-size:.78rem;color:#f3e4c8;margin-top:2px;line-height:1.3}
+  .acervo-footnote{text-align:center;font-size:.84rem;color:#dcc39c;margin-top:22px}
 
   /* AUTORA */
   #roberta{background:var(--bg2)}
@@ -241,17 +226,8 @@
   #roberta h2,#roberta .kicker{text-align:center}
   @media(min-width:900px){ #roberta h2,#roberta .kicker{text-align:left} }
   #roberta p.body{color:var(--ink-soft);margin-top:12px}
-  .about-stats{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;justify-content:center}
-  @media(min-width:900px){ .about-stats{justify-content:flex-start} }
 
-  /* DEPOIMENTOS FOTO */
-  #depfoto{background:var(--bg)}
-  .deps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:1000px;margin:30px auto 0}
-  @media(min-width:640px){ .deps{grid-template-columns:repeat(3,1fr)} }
-  @media(min-width:900px){ .deps{grid-template-columns:repeat(5,1fr)} }
-  .deps a{display:block;border-radius:5px;overflow:hidden;border:1px solid var(--line);box-shadow:0 3px 10px rgba(36,26,16,.08)}
-
-  /* DEPOIMENTOS TEXTO */
+  /* DEPOIMENTOS */
   #depoimentos{background:var(--bg2)}
   .revs{display:flex;gap:14px;max-width:1080px;margin:30px auto 0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 15% 10px 2px;scrollbar-width:none}
   .revs::-webkit-scrollbar{display:none}
@@ -265,14 +241,12 @@
   .rev .who b{font-size:.9rem}
   .rev .who span{display:block;color:var(--ink-soft);font-size:.76rem}
   .reviews-controls{max-width:1080px;margin:12px auto 0;display:grid;grid-template-columns:44px 1fr auto 44px;align-items:center;gap:10px}
-  .review-arrow{width:40px;height:40px;border:1px solid var(--gold-lt);border-radius:50%;background:var(--white);color:var(--vinho);font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,opacity .2s}
+  .review-arrow{width:40px;height:40px;border:1px solid var(--gold-lt);border-radius:50%;background:var(--white);color:var(--vinho);font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
   .review-arrow:hover{background:var(--vinho);color:#fff}
-  .review-arrow:disabled{opacity:.32;cursor:default;background:var(--white);color:var(--ink-soft)}
   .review-dots{display:flex;justify-content:center;gap:7px}
-  .review-dot{width:8px;height:8px;border-radius:50%;border:0;background:var(--line);padding:0;cursor:pointer;transition:width .2s,background .2s}
+  .review-dot{width:8px;height:8px;border-radius:50%;border:0;background:var(--line);padding:0;cursor:pointer}
   .review-dot.active{width:22px;border-radius:999px;background:var(--vinho)}
   .review-count{font-family:'Cinzel',serif;font-size:.75rem;color:var(--ink-soft);white-space:nowrap}
-  @media(prefers-reduced-motion:reduce){.revs{scroll-behavior:auto}}
 
   /* FAQ */
   #faq{background:var(--bg)}
@@ -294,11 +268,6 @@
   .countdown-timer{display:flex;align-items:center;gap:3px}
   .countdown-digit{min-width:31px;padding:3px 6px;border-radius:4px;background:rgba(255,255,255,.13);font-family:'Cinzel',serif;font-size:.92rem;font-weight:800;text-align:center}
   .countdown-sep{color:var(--gold-pale);font-weight:800}
-  @media(max-width:420px){
-    .countdown-bar{gap:8px;padding:9px 12px}
-    .countdown-label{font-size:.66rem}
-    .countdown-digit{min-width:28px;font-size:.84rem;padding:3px 5px}
-  }
   .plan-card{background:var(--white);border:2px solid var(--line);border-radius:8px;padding:30px 26px;position:relative}
   .plan-card.pro{background:linear-gradient(145deg,#fff 0%,#fffaf1 100%);border-color:var(--vinho);box-shadow:0 14px 34px rgba(107,20,32,.15),inset 0 0 0 1px rgba(201,154,58,.3)}
   .plan-star{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--vinho);color:#fdf2df;font-family:'Cinzel',serif;font-weight:700;font-size:.72rem;letter-spacing:.06em;padding:6px 18px;border-radius:999px;white-space:nowrap}
@@ -312,7 +281,6 @@
   .plan-features li{font-size:.92rem;display:flex;gap:9px}
   .ft-yes{color:var(--verde);font-weight:700;flex-shrink:0}
   .plan-note{font-size:.72rem;color:var(--ink-soft);text-align:center;margin-top:10px}
-  .plan-card>.btn{font-size:clamp(.8rem,1.15vw,.88rem);padding-left:12px;padding-right:12px;white-space:nowrap}
 
   /* GARANTIA */
   #garantia{background:var(--verde);color:#e9f2ec;text-align:center}
@@ -323,265 +291,17 @@
   .garantia-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
   .garantia-tag{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.05em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:999px}
 
-  /* CTA FINAL */
+  /* CTA FINAL E FOOTER */
   #cta-final{background:var(--vinho);color:#fdf2df;text-align:center}
   #cta-final h2{color:#fdf2df}
   #cta-final .lead{color:#e3c9a3}
-
-  /* FOOTER */
   footer{background:var(--ink);color:#c9bda4;padding:36px 20px;text-align:center}
   .footer-brand h3{font-family:'Cinzel',serif;color:#fdf2df;font-size:1.15rem;margin-bottom:6px}
-  .footer-brand p{font-size:.9rem}
-  .footer-contact{margin-top:16px;font-size:.86rem}
-  .footer-contact a{color:var(--gold-lt);text-decoration:none}
-  .footer-contact a:hover{color:var(--gold-pale)}
   .footer-bottom{border-top:1px solid rgba(201,189,164,.15);margin-top:22px;padding-top:18px;max-width:640px;margin-inline:auto;font-size:.76rem;color:#8a7e68}
-
-  /* DOWNSELL MODAL */
-  #ds-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(22,18,14,.7);align-items:center;justify-content:center;padding:14px}
-  #ds-overlay.open{display:flex}
-  #ds-modal{background:#fbfaf7;max-width:390px;width:100%;border-radius:4px;box-shadow:0 24px 60px rgba(0,0,0,.34);max-height:calc(100vh - 28px);overflow-y:auto}
-  .ds-head{color:var(--ink);padding:22px 44px 8px 22px;text-align:left;position:relative}
-  .ds-head span{font-family:'Lora',serif;font-weight:700;font-size:1rem;letter-spacing:0;line-height:1.35}
-  .ds-close{position:absolute;top:12px;right:10px;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ink-soft);font-size:1.15rem;cursor:pointer;line-height:24px}
-  .ds-body{padding:4px 20px 24px}
-  .ds-intro{text-align:center;color:var(--ink-soft);font-size:.88rem;line-height:1.5;margin:4px 0 18px}
-  .ds-offer{border:1px solid var(--gold-lt);background:linear-gradient(145deg,#fffdf7,#fff8e7);padding:14px 14px 16px;text-align:center}
-  .ds-badge{display:inline-block;background:#d2a947;color:#fff;font-family:'Cinzel',serif;font-size:.75rem;font-weight:800;padding:6px 12px;margin-bottom:8px}
-  .ds-title{font-family:'Cinzel',serif;font-weight:700;font-size:1rem;margin-bottom:2px}
-  .ds-sub{color:var(--ink-soft);font-size:.8rem;margin-bottom:14px}
-  .ds-price-row{display:flex;align-items:baseline;justify-content:center;gap:10px;margin:18px 0 3px}
-  .ds-old{color:var(--ink-soft);text-decoration:line-through}
-  .ds-new{font-family:'Cinzel',serif;font-weight:800;font-size:1.7rem;color:var(--vinho)}
-  .ds-save{font-size:.76rem;color:var(--gold);font-weight:700;margin-bottom:12px}
-  .ds-features{list-style:none;margin:0 0 16px;display:flex;flex-direction:column;gap:7px;text-align:left}
-  .ds-features li{font-size:.82rem;color:var(--ink-soft);line-height:1.35;padding-left:14px;position:relative}
-  .ds-features li::before{content:'\2013';position:absolute;left:0;color:var(--gold);font-weight:700}
-  .ds-primary{border-radius:999px;font-size:.82rem;padding:13px 12px}
-  .ds-decline{display:block;margin:18px auto 0;width:max-content;max-width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);font-size:.78rem;font-weight:600;text-align:center}
-
-  /* COMPACTACAO VISUAL */
-  #recebe,#vantagens,#filtro,#pecas,#depoimentos,#planos,#faq,#roberta{padding:42px 0}
-  #hero .hero-h1{margin-top:14px}
-  #recebe .receive-grid,#vantagens .vant-grid,#filtro .filtro-grid,#pecas .pieces-shell,
-  #depoimentos .revs,#planos .plans-grid,#faq .faq-list{margin-top:24px}
-  .receive-card{padding:20px 18px}
-  .vant-card{padding:22px 20px;text-align:center}
-  .vant-card .vant-icon{margin-left:auto;margin-right:auto}
-  .vant-card p{max-width:310px;margin-left:auto;margin-right:auto}
-  .filtro-box{padding:22px}
-  .piece b{padding:9px 7px}
-  .rev{padding:18px}
-  .plan-card{padding:25px 24px}
-  .plan-name,.plan-pack,.plan-price,.plan-from{text-align:center}
-  .plan-pack{margin-bottom:12px}
-  .plan-price{font-size:2.2rem}
-  .plan-from{margin-top:3px}
-  .plan-divider{margin-bottom:15px}
-  .plan-features{text-align:left;margin-bottom:18px}
-  .plan-note{margin-top:7px}
-  #roberta .about-grid{gap:34px}
-
-  @media(min-width:360px) and (max-width:639px){
-    .receive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .receive-card{padding:17px 13px}
-    .receive-n{font-size:1.25rem}
-    .receive-card strong{font-size:.78rem}
-    .receive-card p{font-size:.8rem;line-height:1.5}
-  }
-  @media(max-width:639px){
-    #recebe,#vantagens,#filtro,#pecas,#bonus,#depoimentos,#planos,#faq,#roberta{padding:36px 0}
-    #recebe .receive-grid,#vantagens .vant-grid,#filtro .filtro-grid,#pecas .pieces-shell,
-    #depoimentos .revs,#planos .plans-grid,#faq .faq-list{margin-top:20px}
-    .plan-card{padding:22px 18px}
-    .plan-pack{font-size:1.02rem}
-    .plan-price{font-size:2.05rem}
-    .plan-features{gap:6px}
-    .faq-q{padding:14px 16px}
-    .faq-item.open .faq-a{padding:0 16px 15px}
-    .hero-cta>.btn{font-size:.86rem;padding-left:10px;padding-right:10px;white-space:nowrap}
-    #bonus .bonus-grid{margin-top:20px;gap:12px}
-    #bonus .bonus-card{display:grid;grid-template-columns:40% 60%;min-height:176px}
-    #bonus .bonus-img{height:100%;min-height:176px;aspect-ratio:auto;object-fit:cover;object-position:center}
-    #bonus .bonus-body{padding:14px 12px;display:flex;flex-direction:column;justify-content:center}
-    #bonus .bonus-body h3{font-size:.8rem;line-height:1.35;margin-bottom:6px}
-    #bonus .bonus-body p{font-size:.78rem;line-height:1.45;margin-bottom:8px}
-    #bonus .bonus-price{gap:6px;padding-top:7px}
-    #bonus .bonus-old{font-size:.68rem}
-    #bonus .bonus-free{font-size:.82rem}
-    #bonus .bonus-tag{top:8px;right:calc(60% + 8px);font-size:.6rem;padding:4px 9px}
-    .roi-box{flex-wrap:nowrap;justify-content:space-between;align-items:flex-start;gap:8px;padding:24px 12px}
-    .roi-item{flex:1;min-width:0}
-    .roi-item .v{font-size:1.2rem}
-    .roi-item .l{font-size:.7rem;line-height:1.35}
-    .roi-arrow{flex:0 0 auto;font-size:1.05rem;margin-top:3px}
-    .plan-card>.btn{font-size:.8rem;padding-left:8px;padding-right:8px;white-space:nowrap}
-  }
-  @media(min-width:480px) and (max-width:639px){
-    .revs{grid-template-columns:repeat(2,minmax(0,1fr))}
-  }
-
-  /* LEGIBILIDADE TIPOGRAFICA */
-  .kicker{
-    font-size:.78rem;
-    font-weight:700;
-    letter-spacing:.14em;
-    line-height:1.5;
-  }
-  .lead{
-    font-weight:600;
-    line-height:1.55;
-  }
-  #roi .kicker,
-  #acervo-geral .kicker,
-  #cta-final .kicker{
-    color:var(--gold-pale);
-  }
-  #roi .lead,
-  #acervo-geral .lead,
-  #cta-final .lead{
-    color:#f1ddb8;
-  }
-  .trust-row{font-size:.86rem;font-weight:500}
-  .receive-card p,
-  .vant-card p,
-  .filtro-item p,
-  .plan-features li,
-  .faq-a{font-weight:500}
-  .piece b{font-weight:700}
-  .roi-item .l{font-size:.82rem;font-weight:600;color:#ead4ac}
-  .roi-disclaimer{font-size:.82rem;line-height:1.6;color:#d0ae78;font-weight:500}
-  .acervo-l{font-size:.84rem;font-weight:600}
-  .acervo-footnote{font-size:.86rem;line-height:1.55;color:#ead4ac;font-weight:500}
-  .bonus-tag{font-size:.72rem;font-weight:800}
-  .rev .who span{font-size:.8rem;font-weight:500}
-  .review-count{font-size:.8rem;font-weight:700}
-  .plan-name{font-size:.8rem;font-weight:700}
-  .plan-note{font-size:.8rem;line-height:1.45;font-weight:500}
-  .garantia-tag{font-size:.74rem;font-weight:700}
-  .footer-brand p,
-  .footer-contact{font-weight:500}
-  .footer-bottom{font-size:.68rem;line-height:1.45;color:#a99d87}
-  .footer-bottom p+p{margin-top:9px}
-  @media(max-width:639px){
-    .kicker{font-size:.74rem;letter-spacing:.12em}
-  }
-
-  /* QUIZ DE ABERTURA */
-  .quiz-overlay{position:fixed;inset:0;z-index:99999;display:flex;align-items:flex-start;justify-content:center;padding:14px;background:rgba(29,18,12,.68);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s cubic-bezier(.22,1,.36,1),visibility .35s ease}
-  .quiz-overlay.active{opacity:1;visibility:visible;pointer-events:auto}
-  .quiz-box{position:relative;width:min(100%,440px);margin:auto;background:#fafaf7;border:1px solid rgba(176,119,0,.22);border-radius:10px;overflow:hidden;box-shadow:0 12px 48px rgba(22,13,8,.12);transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease}
-  .quiz-overlay.active .quiz-box{animation:quizCardIn .45s cubic-bezier(.22,1,.36,1) both}
-  .quiz-skip{position:absolute;z-index:12;top:13px;right:13px;border:1px solid rgba(107,20,32,.2);border-radius:999px;padding:8px 12px;background:rgba(250,250,247,.94);color:var(--vinho);font:700 .72rem 'Lora',serif;cursor:pointer;box-shadow:0 3px 12px rgba(107,20,32,.08);transition:transform .3s cubic-bezier(.22,1,.36,1),background-color .3s ease,box-shadow .3s ease}
-  .quiz-skip:hover,.quiz-skip:focus-visible{transform:translateY(-1px);background:#fff;box-shadow:0 6px 18px rgba(107,20,32,.14);outline:none}
-  .quiz-progress{height:5px;background:rgba(176,119,0,.12)}
-  .quiz-progress-bar{display:block;width:0;height:100%;background:linear-gradient(90deg,rgba(176,119,0,.8),rgba(107,20,32,.88));transition:width .4s cubic-bezier(.22,1,.36,1)}
-  .quiz-stage{min-height:0}
-  .quiz-step{display:none;animation:quizIn .4s cubic-bezier(.22,1,.36,1)}
-  .quiz-step-active{display:block}
-  .quiz-intro-image{height:230px;background:linear-gradient(180deg,rgba(250,250,247,0) 48%,#fafaf7 100%),url('processo-artesanal.webp') center/cover}
-  .quiz-content{padding:30px 25px 34px;text-align:center}
-  .quiz-count,.quiz-badge,.quiz-context{font-family:'Cinzel',serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-  .quiz-context{display:block;margin:0 0 9px;font-size:.61rem;letter-spacing:.08em}
-  .quiz-badge{display:inline-block;border:1px solid rgba(176,119,0,.28);border-radius:999px;padding:7px 12px;background:rgba(255,248,228,.52)}
-  .quiz-symbol{display:block;margin:10px 0 2px;color:var(--vinho);font-size:1.45rem}
-  .quiz-title{margin:10px 0 14px;font-family:'Lora',serif;font-size:clamp(1.35rem,5.7vw,1.72rem);font-weight:600;line-height:1.24;color:#241b18}
-  .quiz-text{color:#625953;font-family:'Segoe UI',sans-serif;font-size:.93rem;line-height:1.65}
-  .quiz-options{display:grid;gap:11px;margin-top:23px}
-  .quiz-option{width:100%;padding:14px 16px;border:1px solid rgba(107,20,32,.18);border-radius:16px;background:#fff;color:#352b27;font:500 .9rem/1.45 'Segoe UI',sans-serif;text-align:left;cursor:pointer;box-shadow:0 2px 10px rgba(107,20,32,.035);transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s ease,background-color .3s ease,box-shadow .3s ease}
-  .quiz-option:hover,.quiz-option:focus-visible{transform:translateY(-1px);border-color:rgba(107,20,32,.42);background:rgba(107,20,32,.025);box-shadow:0 7px 20px rgba(107,20,32,.09);outline:none}
-  .quiz-option:disabled{opacity:.65;cursor:wait}
-  .quiz-btn{width:100%;margin-top:21px;padding:15px 18px;border:1px solid rgba(107,20,32,.15);border-radius:999px;background:var(--vinho);color:#fff7e8;font:700 .88rem 'Cinzel',serif;cursor:pointer;box-shadow:0 3px 12px rgba(107,20,32,.18);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,background-color .3s ease}
-  .quiz-btn:hover,.quiz-btn:focus-visible{transform:translateY(-1px);background:#791827;box-shadow:0 8px 22px rgba(107,20,32,.26);outline:none}
-  .quiz-trust{margin-top:11px;color:#746963;font-family:'Segoe UI',sans-serif;font-size:.72rem}
-  .quiz-transition{position:absolute;inset:0;z-index:8;display:grid;place-items:center;padding:30px;background:radial-gradient(circle at 50% 38%,rgba(176,119,0,.08),transparent 42%),linear-gradient(160deg,#fffdf8,#f8f3e9);color:#352b27;text-align:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s cubic-bezier(.22,1,.36,1),visibility .35s ease}
-  .quiz-transition.show{opacity:1;visibility:visible;pointer-events:auto}
-  .quiz-transition-inner{max-width:320px;opacity:0;transform:translateY(8px);transition:opacity .35s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1)}
-  .quiz-transition.show .quiz-transition-inner{opacity:1;transform:translateY(0)}
-  .quiz-trans-symbol{display:block;font-size:2.1rem;color:var(--gold);margin-bottom:15px}
-  .quiz-trans-msg{color:var(--vinho);font:600 1.35rem/1.42 'Cormorant Garamond',serif}
-  .quiz-trans-sub{margin-top:8px;color:#746963;font:400 .82rem/1.5 'Segoe UI',sans-serif}
-  @keyframes quizIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  @keyframes quizCardIn{from{opacity:0;transform:translateY(10px) scale(.992)}to{opacity:1;transform:translateY(0) scale(1)}}
-  @media(prefers-reduced-motion:reduce){.quiz-overlay,.quiz-box,.quiz-skip,.quiz-progress-bar,.quiz-step,.quiz-option,.quiz-btn,.quiz-transition,.quiz-transition-inner{animation:none;transition:none}}
-  @media(max-height:650px){.quiz-intro-image{height:175px}.quiz-content{padding-top:21px;padding-bottom:23px}}
 </style>
 </head>
 <body>
-<script>
-(function () {
-  const POLL_MS = 500;
-  const UTM_SEP = "jLj";          
-  const XCOD_SEP = "hQwK21wXxR"; 
 
-  const STORAGE_KEY = { FB: "lead", google: "lead-google" };
-  
-  function getOrigin(utmSource) {
-    if (!utmSource) return null;
-    const base = utmSource.split(UTM_SEP)[0];
-    return base === "FB" || base === "google" ? base : null;
-  }
-
-  function getLeadIdFromStorage(origin) {
-    const key = STORAGE_KEY[origin];
-    if (!key) return null;
-    const raw = localStorage.getItem(key);
-    if (!raw) return null;
-    try {
-      const obj = JSON.parse(raw);
-      return obj && obj._id ? String(obj._id) : null;
-    } catch {
-      return null;
-    }
-  }
-
-  function resolveLeadId(utmSource, origin) {
-    const prefix = origin + UTM_SEP;
-    if (utmSource && utmSource.startsWith(prefix)) {
-      const id = utmSource.slice(prefix.length);
-      if (id) return id;
-    }
-    return getLeadIdFromStorage(origin);
-  }
-
-  function applyIfNeeded() {
-    const url = new URL(window.location.href);
-    const currentSource = url.searchParams.get("utm_source");
-    const origin = getOrigin(currentSource);
-    if (!origin) return false;
-
-    const id = resolveLeadId(currentSource, origin);
-    if (!id) return false;
-
-    const desired = origin + UTM_SEP + id;
-    let changed = false;
-
-    if (currentSource !== desired) {
-      url.searchParams.set("utm_source", desired);
-      changed = true;
-    }
-
-    const currentXcod = url.searchParams.get("xcod");
-    if (currentXcod) {
-      const parts = currentXcod.split(XCOD_SEP);
-      if (parts[0] !== desired) {
-        parts[0] = desired;
-        url.searchParams.set("xcod", parts.join(XCOD_SEP));
-        changed = true;
-      }
-    }
-
-    if (!changed) return true;
-    window.location.replace(url.toString());
-    return true;
-  }
-
-  if (applyIfNeeded()) return;
-  const interval = setInterval(() => {
-    if (applyIfNeeded()) clearInterval(interval);
-  }, POLL_MS);
-})();
-</script>
 <div id="topbar">Condi&ccedil;&atilde;o especial de lan&ccedil;amento &middot; <b>acesso imediato e vital&iacute;cio</b></div>
 
 <section id="hero">
@@ -709,6 +429,7 @@
   </div>
 </section>
 
+<!-- SEÇÃO DO CARROSSEL CONECTADA COM AS IMAGENS DA RAIZ -->
 <section id="pecas">
   <div class="wrap">
     <span class="kicker">Uma amostra do curso</span>
@@ -716,23 +437,24 @@
     <p class="lead">Estes s&atilde;o apenas alguns exemplos. O curso re&uacute;ne mais de 150 projetos escritos de santos, anjos e personagens cat&oacute;licos.</p>
     <div class="pieces-shell">
       <div class="pieces-viewport" id="piecesViewport" aria-label="Galeria de santinhos em movimento">
-        <div class="pieces is-ready" id="piecesTrack">
-          <div class="piece"><img class="piece-img" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async" src="nossa-senhora-1.webp"><b>Nossa Senhora</b></div>
-          <div class="piece"><img class="piece-img" alt="Nossa Senhora de Fátima em amigurumi" width="600" height="600" decoding="async" src="nossa-senhora-fatima.webp"><b>Nossa Senhora de Fátima</b></div>
-          <div class="piece"><img class="piece-img" alt="São José em amigurumi" width="304" height="600" decoding="async" src="sao-jose.webp"><b>São José</b></div>
-          <div class="piece"><img class="piece-img" alt="Santo Antônio em amigurumi" width="450" height="600" decoding="async" src="santo-antonio.webp"><b>Santo Antônio</b></div>
-          <div class="piece"><img class="piece-img" alt="São Jorge em amigurumi" width="570" height="562" decoding="async" src="sao-jorge.webp"><b>São Jorge</b></div>
-          <div class="piece"><img class="piece-img" alt="Nossa Senhora das Graças em amigurumi" width="580" height="580" decoding="async" src="nossa-senhora-gracas.webp"><b>Nossa Senhora das Graças</b></div>
-          <div class="piece"><img class="piece-img" alt="Anjo católico em amigurumi" width="456" height="580" decoding="async" src="anjo-2.webp"><b>Anjo da Guarda</b></div>
-          <div class="piece"><img class="piece-img" alt="Anjo de fé em amigurumi" width="600" height="600" decoding="async" src="anjo-3.webp"><b>Anjo de Fé</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async" src="nossa-senhora-1.webp"><b>Nossa Senhora</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="Nossa Senhora de Fátima em amigurumi" width="600" height="600" decoding="async" src="nossa-senhora-fatima.webp"><b>Nossa Senhora de Fátima</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="São José em amigurumi" width="304" height="600" decoding="async" src="sao-jose.webp"><b>São José</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="Santo Antônio em amigurumi" width="450" height="600" decoding="async" src="santo-antonio.webp"><b>Santo Antônio</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="São Jorge em amigurumi" width="570" height="562" decoding="async" src="sao-jorge.webp"><b>São Jorge</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="Nossa Senhora das Graças em amigurumi" width="580" height="580" decoding="async" src="nossa-senhora-gracas.webp"><b>Nossa Senhora das Graças</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="Anjo católico em amigurumi" width="456" height="580" decoding="async" src="anjo-2.webp"><b>Anjo da Guarda</b></div>
-          <div class="piece" aria-hidden="true"><img class="piece-img" alt="Anjo de fé em amigurumi" width="600" height="600" decoding="async" src="anjo-3.webp"><b>Anjo de Fé</b></div>
+        <div class="pieces" id="piecesTrack" style="display: flex; gap: 16px; width: max-content; animation: piecesMarquee 22s linear infinite;">
+          <div class="piece"><img class="piece-img" src="nossa-senhora-1.webp" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora</b></div>
+          <div class="piece"><img class="piece-img" src="nossa-senhora-fatima.webp" alt="Nossa Senhora de Fátima em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora de F&aacute;tima</b></div>
+          <div class="piece"><img class="piece-img" src="sao-jose.webp" alt="São José em amigurumi" width="304" height="600" decoding="async"><b>S&atilde;o Jos&eacute;</b></div>
+          <div class="piece"><img class="piece-img" src="santo-antonio.webp" alt="Santo Antônio em amigurumi" width="450" height="600" decoding="async"><b>Santo Ant&ocirc;nio</b></div>
+          <div class="piece"><img class="piece-img" src="sao-jorge.webp" alt="São Jorge em amigurumi" width="570" height="562" decoding="async"><b>S&atilde;o Jorge</b></div>
+          <div class="piece"><img class="piece-img" src="nossa-senhora-gracas.webp" alt="Nossa Senhora das Graças em amigurumi" width="580" height="580" decoding="async"><b>Nossa Senhora das Gra&ccedil;as</b></div>
+          <div class="piece"><img class="piece-img" src="anjo-2.webp" alt="Anjo católico em amigurumi" width="456" height="580" decoding="async"><b>Anjo da Guarda</b></div>
+          <div class="piece"><img class="piece-img" src="anjo-3.webp" alt="Anjo de fé em amigurumi" width="600" height="600" decoding="async"><b>Anjo de F&eacute;</b></div>
+          <!-- Duplicado para efeito de loop contínuo -->
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="nossa-senhora-1.webp" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora</b></div>
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="nossa-senhora-fatima.webp" alt="Nossa Senhora de Fátima em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora de F&aacute;tima</b></div>
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="sao-jose.webp" alt="São José em amigurumi" width="304" height="600" decoding="async"><b>S&atilde;o Jos&eacute;</b></div>
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="santo-antonio.webp" alt="Santo Antônio em amigurumi" width="450" height="600" decoding="async"><b>Santo Ant&ocirc;nio</b></div>
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="sao-jorge.webp" alt="São Jorge em amigurumi" width="570" height="562" decoding="async"><b>S&atilde;o Jorge</b></div>
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="nossa-senhora-gracas.webp" alt="Nossa Senhora das Graças em amigurumi" width="580" height="580" decoding="async"><b>Nossa Senhora das Gra&ccedil;as</b></div>
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="anjo-2.webp" alt="Anjo católico em amigurumi" width="456" height="580" decoding="async"><b>Anjo da Guarda</b></div>
+          <div class="piece" aria-hidden="true"><img class="piece-img" src="anjo-3.webp" alt="Anjo de fé em amigurumi" width="600" height="600" decoding="async"><b>Anjo de F&eacute;</b></div>
         </div>
       </div>
     </div>
@@ -797,9 +519,6 @@
         </div>
       </div>
     </div>
-    <div class="bonus-total">
-      <div class="bonus-total-row"><span>As quatro extens&otilde;es + o acervo completo abaixo</span><span class="bonus-total-free">inclusos no Completo</span></div>
-    </div>
   </div>
 </section>
 
@@ -809,34 +528,13 @@
     <h2>Amplie seu aprendizado com um universo de amigurumi</h2>
     <p class="lead">Al&eacute;m dos santinhos cat&oacute;licos, o acesso Completo libera dezenas de cole&ccedil;&otilde;es escritas de bonecas, bichinhos, personagens e pe&ccedil;as tem&aacute;ticas.</p>
     <div class="acervo-grid">
-      <div class="acervo-card"><img class="acervo-img" src="colecao-bonecas-bichinhos.webp" alt="Cole&ccedil;&atilde;o de bonecas e bichinhos em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Bonecas e bichinhos</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="colecao-harry-potter.webp" alt="Cole&ccedil;&atilde;o inspirada em Harry Potter em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Cole&ccedil;&atilde;o Harry Potter</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="colecao-natalina.webp" alt="Cole&ccedil;&atilde;o natalina em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Tem&aacute;tica natalina</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="colecao-personagens-desenhos.webp" alt="Cole&ccedil;&atilde;o de personagens e desenhos em amigurumi" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Personagens e desenhos</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-bonecas-bichinhos.webp" alt="Cole&ccedil;&atilde;o de bonecas e bichinhos" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Bonecas e bichinhos</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-harry-potter.webp" alt="Cole&ccedil;&atilde;o Harry Potter" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Cole&ccedil;&atilde;o Harry Potter</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-natalina.webp" alt="Temática natalina" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Tem&aacute;tica natalina</span></div></div>
+      <div class="acervo-card"><img class="acervo-img" src="colecao-personagens-desenhos.webp" alt="Personagens e desenhos" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Personagens e desenhos</span></div></div>
     </div>
     <p class="acervo-footnote">Mais variedade para praticar, presentear e criar novas pe&ccedil;as durante muito tempo.</p>
     <div style="text-align:center;margin-top:20px"><a href="#ofertas" class="btn">Quero o Curso Completo</a></div>
-  </div>
-</section>
-
-<section id="depoimentos">
-  <div class="wrap">
-    <span class="kicker">Experi&ecirc;ncias reais</span>
-    <h2>O que dizem quem <em>j&aacute; usou</em></h2>
-    <div class="revs" id="reviewsTrack" aria-label="Depoimentos de clientes">
-      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Nunca pensei que conseguiria criar um amigurumi t&atilde;o lindo! O passo a passo &eacute; claro e simples de acompanhar.&rdquo;</p><div class="who"><b>Maria das Gra&ccedil;as</b><span>Iniciante em amigurumi</span></div></div>
-      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;J&aacute; sabia croch&ecirc; mas n&atilde;o sabia fazer amigurumi. Aprendi do zero e j&aacute; vendi mais de 30 pe&ccedil;as!&rdquo;</p><div class="who"><b>Ana Paula</b><span>Artes&atilde; e empreendedora</span></div></div>
-      <div class="rev highlight"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;O material mudou minha vida! Comecei como hobby e hoje vendo minhas pe&ccedil;as em feiras religiosas.&rdquo;</p><div class="who"><b>Claudia Ferreira</b><span>Vende em feiras religiosas</span></div></div>
-      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Fiz o S&atilde;o Francisco de presente para minha m&atilde;e e ela chorou de emo&ccedil;&atilde;o.&rdquo;</p><div class="who"><b>Juliana Costa</b><span>Aluna do curso</span></div></div>
-      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;As receitas s&atilde;o maravilhosas! J&aacute; fiz mais de 20 santinhos diferentes.&rdquo;</p><div class="who"><b>Rosana Oliveira</b><span>Aluna h&aacute; 6 meses</span></div></div>
-      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Tinha 60 anos e achei que era tarde. O material me mostrou que eu tamb&eacute;m poderia aprender!&rdquo;</p><div class="who"><b>Teresa Mendes</b><span>Come&ccedil;ou aos 60 anos</span></div></div>
-    </div>
-    <div class="reviews-controls" aria-label="Controles dos depoimentos">
-      <button class="review-arrow" id="reviewPrev" type="button" aria-label="Depoimento anterior">&larr;</button>
-      <div class="review-dots" id="reviewDots" aria-label="Escolher depoimento"></div>
-      <span class="review-count" id="reviewCount" aria-live="polite">1 de 6</span>
-      <button class="review-arrow" id="reviewNext" type="button" aria-label="Pr&oacute;ximo depoimento">&rarr;</button>
-    </div>
   </div>
 </section>
 
@@ -844,115 +542,21 @@
   <div class="wrap">
     <span class="kicker">Escolha seu acesso</span>
     <h2>Comece o seu <em>curso</em></h2>
-    <p class="lead">Aprenda criando santinhos cat&oacute;licos ou amplie sua pr&aacute;tica com dezenas de outras cole&ccedil;&otilde;es de amigurumi.</p>
-    <div class="countdown-bar" aria-label="Contagem regressiva do pre&ccedil;o especial">
-      <span class="countdown-label">Pre&ccedil;o especial encerra em:</span>
-      <div class="countdown-timer" aria-live="off">
-        <span class="countdown-digit" id="offer-hours">00</span><span class="countdown-sep">:</span>
-        <span class="countdown-digit" id="offer-minutes">30</span><span class="countdown-sep">:</span>
-        <span class="countdown-digit" id="offer-seconds">00</span>
-      </div>
-    </div>
     <div class="plans-grid" id="ofertas">
       <div class="plan-card">
         <div class="plan-name">Curso de Amigurumi Cat&oacute;lico</div>
         <div class="plan-pack">Curso B&aacute;sico &middot; +150 Santinhos</div>
         <div class="plan-price">R$19<small>,90 no Pix</small></div>
-        <div class="plan-from">De R$67,00</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li><span class="ft-yes">&#10003;</span> Mais de 150 projetos de santinhos cat&oacute;licos</li>
-          <li><span class="ft-yes">&#10003;</span> Materiais, pontos, montagem e acabamento</li>
-          <li><span class="ft-yes">&#10003;</span> Curso livre em formato digital escrito</li>
-          <li><span class="ft-yes">&#10003;</span> Acesso imediato e vital&iacute;cio</li>
-          <li><span class="ft-yes">&#10003;</span> Garantia de 7 dias</li>
-        </ul>
-        <a href="https://pay.cakto.com.br/3d7j6a6_1001007" id="btn-basico" data-checkout="basico" class="btn btn-outline btn-block btn-pulse">&#128073; QUERO O CURSO B&Aacute;SICO</a>
-        <p class="plan-note">Pagamento seguro &middot; Acesso imediato via e-mail</p>
+        <a href="https://pay.cakto.com.br/3d7j6a6_1001007" class="btn btn-outline btn-block">&#128073; QUERO O CURSO B&Aacute;SICO</a>
       </div>
       <div class="plan-card pro">
         <span class="plan-star">MAIS ESCOLHIDO</span>
         <div class="plan-name">Curso de Amigurumi Cat&oacute;lico</div>
         <div class="plan-pack">Curso + Acervo Completo</div>
         <div class="plan-price">R$29<small>,90 &agrave; vista</small></div>
-        <div class="plan-from">De R$164,00</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li><span class="ft-yes">&#10003;</span> <strong>Tudo do Curso B&aacute;sico</strong></li>
-          <li><span class="ft-yes">&#10003;</span> <strong>Acervo completo com dezenas de cole&ccedil;&otilde;es</strong></li>
-          <li><span class="ft-yes">&#10003;</span> Bonecas, bichinhos, personagens, revers&iacute;veis e decora&ccedil;&atilde;o</li>
-          <li><span class="ft-yes">&#10003;</span> Temas de magia, princesas, her&oacute;is, Natal, P&aacute;scoa e naninhas</li>
-          <li><span class="ft-yes">&#10003;</span> 4 extens&otilde;es especiais em materiais escritos</li>
-          <li><span class="ft-yes">&#10003;</span> Acesso vital&iacute;cio &middot; garantia de 7 dias</li>
-        </ul>
-        <a href="https://pay.cakto.com.br/zb3f7zi_1001053" data-checkout="completo" class="btn btn-block btn-pulse">&#128073; QUERO O CURSO COMPLETO</a>
-        <p class="plan-note">Pagamento seguro &middot; Acesso imediato via e-mail</p>
+        <a href="https://pay.cakto.com.br/zb3f7zi_1001053" class="btn btn-block">&#128073; QUERO O CURSO COMPLETO</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="garantia">
-  <div class="narrow">
-    <div class="garantia-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4L8 10v14c0 10 7 18 16 20 9-2 16-10 16-20V10L24 4z"/><polyline points="17 24 22 29 32 19"/></svg></div>
-    <h2>Sua compra est&aacute; protegida por 7 dias</h2>
-    <p>Acesse o curso, conhe&ccedil;a o formato dos materiais e veja se ele atende ao que voc&ecirc; procura. Se dentro de 7 dias entender que n&atilde;o &eacute; para voc&ecirc;, basta solicitar o reembolso.</p>
-    <div class="garantia-tags">
-      <span class="garantia-tag">Garantia de 7 dias</span>
-      <span class="garantia-tag">Solicita&ccedil;&atilde;o simples</span>
-      <span class="garantia-tag">Reembolso integral</span>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="narrow">
-    <span class="kicker">D&uacute;vidas frequentes</span>
-    <h2>Perguntas <em>frequentes</em></h2>
-    <div class="faq-list">
-      <div class="faq-item open">
-        <button class="faq-q" onclick="toggleFaq(this)">Como funciona o curso e qual &eacute; o formato?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Este &eacute; um curso livre de aprendizagem pr&aacute;tica, composto por um acervo digital com mais de 150 receitas completas e materiais escritos. Voc&ecirc; escolhe uma pe&ccedil;a e acompanha materiais, pontos, execu&ccedil;&atilde;o, montagem e acabamento no seu ritmo. N&atilde;o possui videoaulas ou aulas ao vivo.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Preciso saber fazer amigurumi para come&ccedil;ar?<span class="faq-icon">+</span></button>
-        <div class="faq-a">As receitas apresentam materiais, pontos utilizados, execu&ccedil;&atilde;o, montagem e acabamento. Por isso, podem ser acompanhadas por quem est&aacute; come&ccedil;ando. O ritmo e o resultado dependem da pr&aacute;tica de cada aluna.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Como recebo e por quanto tempo tenho acesso?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Ap&oacute;s a aprova&ccedil;&atilde;o do pagamento, as instru&ccedil;&otilde;es de acesso s&atilde;o enviadas para o e-mail informado na compra. O acesso &eacute; vital&iacute;cio e voc&ecirc; pode consultar os materiais quantas vezes quiser.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Posso vender as pe&ccedil;as que eu fizer?<span class="faq-icon">+</span></button>
-        <div class="faq-a">Sim. Voc&ecirc; pode produzir pe&ccedil;as f&iacute;sicas para uso pr&oacute;prio, presentes ou encomendas. Os materiais digitais do curso n&atilde;o podem ser revendidos, compartilhados ou distribu&iacute;dos.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Qual a diferen&ccedil;a entre os dois acessos?<span class="faq-icon">+</span></button>
-        <div class="faq-a">O Curso B&aacute;sico inclui mais de 150 projetos de santinhos cat&oacute;licos. O Curso + Acervo Completo acrescenta dezenas de outras cole&ccedil;&otilde;es de amigurumi e quatro extens&otilde;es especiais.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="roberta">
-  <div class="wrap about-grid">
-    <div class="about-img">
-      <img src="processo-artesanal.webp" alt="M&atilde;os produzindo um santinho cat&oacute;lico em amigurumi" width="720" height="900" loading="lazy" decoding="async">
-    </div>
-    <div>
-      <span class="kicker">F&eacute;, criatividade e trabalho manual</span>
-      <h2>Feito para quem ama criar</h2>
-      <p class="body">Um acervo organizado com <strong>mais de 150 projetos de santinhos cat&oacute;licos em amigurumi</strong>. Escolha a pe&ccedil;a, acompanhe os materiais, a montagem e o acabamento e aprenda no seu pr&oacute;prio ritmo, transformando linhas em pe&ccedil;as de f&eacute; e significado.</p>
-    </div>
-  </div>
-</section>
-
-<section id="cta-final">
-  <div class="narrow">
-    <span class="kicker" style="color:#dcc39c">Comece sua primeira cria&ccedil;&atilde;o</span>
-    <h2>Sua f&eacute; pode ganhar forma pelas suas pr&oacute;prias m&atilde;os</h2>
-    <p class="lead">Entre no Curso de Amigurumi Cat&oacute;lico, escolha seu primeiro santinho e aprenda na pr&aacute;tica, no seu ritmo.</p>
-    <div style="text-align:center;margin-top:24px"><a href="#ofertas" class="btn btn-gold">Quero come&ccedil;ar o curso</a></div>
   </div>
 </section>
 
@@ -962,123 +566,9 @@
     <p>Aprendizado pr&aacute;tico por projetos escritos</p>
   </div>
   <div class="footer-bottom">
-    <p>O Curso de Amigurumi Cat&oacute;lico &eacute; um curso livre em formato digital escrito, composto por receitas completas e materiais de consulta. N&atilde;o inclui videoaulas, aulas ao vivo, professora, mentoria, certificado, comunidade, suporte ou acompanhamento individual. O acesso &eacute; vital&iacute;cio e destinado ao uso pessoal da compradora.</p>
-    <p>&copy; 2026 Curso de Amigurumi Cat&oacute;lico. Todos os direitos reservados. Resultados variam conforme a pr&aacute;tica de cada pessoa.</p>
+    <p>&copy; 2026 Curso de Amigurumi Cat&oacute;lico. Todos os direitos reservados.</p>
   </div>
 </footer>
-
-<script>
-(function(){
-  var hours = document.getElementById('offer-hours');
-  var minutes = document.getElementById('offer-minutes');
-  var seconds = document.getElementById('offer-seconds');
-  if(!hours || !minutes || !seconds) return;
-
-  var timerKey = 'amigurumi_preco_especial_fim';
-  var endTime = parseInt(localStorage.getItem(timerKey), 10);
-  if(!endTime || Date.now() >= endTime){
-    endTime = Date.now() + (30 * 60 * 1000);
-    localStorage.setItem(timerKey, String(endTime));
-  }
-
-  function updateOfferTimer(){
-    var remaining = Math.max(0, endTime - Date.now());
-    hours.textContent = String(Math.floor(remaining / 3600000)).padStart(2, '0');
-    minutes.textContent = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, '0');
-    seconds.textContent = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
-  }
-
-  updateOfferTimer();
-  setInterval(updateOfferTimer, 1000);
-})();
-
-function toggleFaq(btn){
-  var item = btn.parentElement;
-  var wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
-  if(!wasOpen) item.classList.add('open');
-}
-
-(function(){
-  var track = document.getElementById('piecesTrack');
-  if(!track) return;
-
-  var originals = Array.prototype.slice.call(track.querySelectorAll('.piece'));
-  originals.forEach(function(card){
-    var img = card.querySelector('.piece-img');
-    if(img && img.hasAttribute('data-src')){
-      img.src = img.getAttribute('data-src');
-      img.removeAttribute('data-src');
-    }
-    var clone = card.cloneNode(true);
-    clone.setAttribute('aria-hidden','true');
-    track.appendChild(clone);
-  });
-  track.classList.add('is-ready');
-})();
-
-(function(){
-  var track = document.getElementById('reviewsTrack');
-  var prev = document.getElementById('reviewPrev');
-  var next = document.getElementById('reviewNext');
-  var dotsWrap = document.getElementById('reviewDots');
-  var count = document.getElementById('reviewCount');
-  if(!track || !prev || !next || !dotsWrap || !count) return;
-
-  var cards = Array.prototype.slice.call(track.querySelectorAll('.rev'));
-  var activeIndex = 0;
-  var scrollTimer;
-
-  cards.forEach(function(_, index){
-    var dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'review-dot';
-    dot.setAttribute('aria-label', 'Ir para o depoimento ' + (index + 1));
-    dot.addEventListener('click', function(){ goTo(index); });
-    dotsWrap.appendChild(dot);
-  });
-
-  function cardLeft(index){
-    return cards[index].offsetLeft - track.offsetLeft;
-  }
-
-  function update(index){
-    activeIndex = Math.max(0, Math.min(index, cards.length - 1));
-    count.textContent = (activeIndex + 1) + ' de ' + cards.length;
-    prev.disabled = activeIndex === 0;
-    next.disabled = activeIndex === cards.length - 1;
-    Array.prototype.forEach.call(dotsWrap.children, function(dot, dotIndex){
-      dot.classList.toggle('active', dotIndex === activeIndex);
-      dot.setAttribute('aria-current', dotIndex === activeIndex ? 'true' : 'false');
-    });
-  }
-
-  function goTo(index){
-    index = Math.max(0, Math.min(index, cards.length - 1));
-    track.scrollTo({left:cardLeft(index),behavior:'smooth'});
-    update(index);
-  }
-
-  function nearestIndex(){
-    var closest = 0;
-    var distance = Infinity;
-    cards.forEach(function(card,index){
-      var current = Math.abs(cardLeft(index) - track.scrollLeft);
-      if(current < distance){ distance = current; closest = index; }
-    });
-    return closest;
-  }
-
-  prev.addEventListener('click', function(){ goTo(activeIndex - 1); });
-  next.addEventListener('click', function(){ goTo(activeIndex + 1); });
-  track.addEventListener('scroll', function(){
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(function(){ update(nearestIndex()); }, 80);
-  }, {passive:true});
-  window.addEventListener('resize', function(){ update(nearestIndex()); });
-  update(0);
-})();
-</script>
 
 </body>
 </html>

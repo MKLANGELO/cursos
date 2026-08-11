@@ -217,57 +217,10 @@
   .acervo-l{display:block;font-size:.78rem;color:#f3e4c8;margin-top:2px;line-height:1.3}
   .acervo-footnote{text-align:center;font-size:.84rem;color:#dcc39c;margin-top:22px}
 
-  /* AUTORA */
-  #roberta{background:var(--bg2)}
-  .about-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:1000px;margin:0 auto}
-  @media(min-width:900px){ .about-grid{grid-template-columns:.85fr 1.15fr;align-items:center;gap:48px} }
-  .about-img{position:relative;width:min(100%,420px);margin:0 auto}
-  .about-img img{width:100%;height:auto!important;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:6px;box-shadow:0 14px 32px rgba(36,26,16,.14)}
-  #roberta h2,#roberta .kicker{text-align:center}
-  @media(min-width:900px){ #roberta h2,#roberta .kicker{text-align:left} }
-  #roberta p.body{color:var(--ink-soft);margin-top:12px}
-
-  /* DEPOIMENTOS */
-  #depoimentos{background:var(--bg2)}
-  .revs{display:flex;gap:14px;max-width:1080px;margin:30px auto 0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 15% 10px 2px;scrollbar-width:none}
-  .revs::-webkit-scrollbar{display:none}
-  .rev{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:22px;box-shadow:0 3px 10px rgba(36,26,16,.06);flex:0 0 84%;scroll-snap-align:start}
-  @media(min-width:640px){.revs{padding-right:2px}.rev{flex-basis:calc((100% - 14px)/2)}}
-  @media(min-width:1000px){.rev{flex-basis:calc((100% - 28px)/3)}}
-  .rev.highlight{border-color:var(--gold-lt)}
-  .rev .stars{color:var(--gold);letter-spacing:2px;font-size:.85rem}
-  .rev p{font-style:italic;margin:10px 0;color:var(--ink-soft);font-size:.93rem}
-  .rev .who{display:block;border-top:1px solid var(--line);padding-top:11px;margin-top:14px}
-  .rev .who b{font-size:.9rem}
-  .rev .who span{display:block;color:var(--ink-soft);font-size:.76rem}
-  .reviews-controls{max-width:1080px;margin:12px auto 0;display:grid;grid-template-columns:44px 1fr auto 44px;align-items:center;gap:10px}
-  .review-arrow{width:40px;height:40px;border:1px solid var(--gold-lt);border-radius:50%;background:var(--white);color:var(--vinho);font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
-  .review-arrow:hover{background:var(--vinho);color:#fff}
-  .review-dots{display:flex;justify-content:center;gap:7px}
-  .review-dot{width:8px;height:8px;border-radius:50%;border:0;background:var(--line);padding:0;cursor:pointer}
-  .review-dot.active{width:22px;border-radius:999px;background:var(--vinho)}
-  .review-count{font-family:'Cinzel',serif;font-size:.75rem;color:var(--ink-soft);white-space:nowrap}
-
-  /* FAQ */
-  #faq{background:var(--bg)}
-  .faq-list{max-width:720px;margin:30px auto 0;display:flex;flex-direction:column;gap:10px}
-  .faq-item{border:1px solid var(--line);border-radius:5px;background:var(--white);overflow:hidden}
-  .faq-item.open{border-color:var(--gold-lt)}
-  .faq-q{width:100%;background:transparent;border:none;padding:16px 20px;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:14px;cursor:pointer;font-family:'Cinzel',serif;font-weight:600;font-size:.94rem;color:var(--ink)}
-  .faq-icon{flex-shrink:0;font-size:1.2rem;color:var(--gold);transition:transform .25s}
-  .faq-item.open .faq-icon{transform:rotate(45deg)}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:.92rem;color:var(--ink-soft);padding:0 20px}
-  .faq-item.open .faq-a{max-height:220px;padding:0 20px 18px}
-
   /* PLANOS */
   #planos{background:var(--bg2)}
   .plans-grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:820px;margin:30px auto 0}
   @media(min-width:700px){ .plans-grid{grid-template-columns:1fr 1fr} }
-  .countdown-bar{display:flex;align-items:center;justify-content:center;gap:12px;max-width:430px;margin:22px auto 4px;padding:10px 16px;border:1px solid var(--gold-lt);border-radius:999px;background:var(--vinho);color:#fdf2df;box-shadow:0 7px 18px rgba(107,20,32,.18)}
-  .countdown-label{font-family:'Cinzel',serif;font-size:.74rem;font-weight:700;letter-spacing:.04em}
-  .countdown-timer{display:flex;align-items:center;gap:3px}
-  .countdown-digit{min-width:31px;padding:3px 6px;border-radius:4px;background:rgba(255,255,255,.13);font-family:'Cinzel',serif;font-size:.92rem;font-weight:800;text-align:center}
-  .countdown-sep{color:var(--gold-pale);font-weight:800}
   .plan-card{background:var(--white);border:2px solid var(--line);border-radius:8px;padding:30px 26px;position:relative}
   .plan-card.pro{background:linear-gradient(145deg,#fff 0%,#fffaf1 100%);border-color:var(--vinho);box-shadow:0 14px 34px rgba(107,20,32,.15),inset 0 0 0 1px rgba(201,154,58,.3)}
   .plan-star{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--vinho);color:#fdf2df;font-family:'Cinzel',serif;font-weight:700;font-size:.72rem;letter-spacing:.06em;padding:6px 18px;border-radius:999px;white-space:nowrap}
@@ -275,26 +228,8 @@
   .plan-pack{font-family:'Cinzel',serif;font-weight:700;font-size:1.12rem;margin-bottom:16px}
   .plan-price{font-family:'Cinzel',serif;font-weight:800;font-size:2.3rem;color:var(--vinho);line-height:1}
   .plan-price small{font-family:'Lora',serif;font-weight:400;font-size:.86rem;color:var(--ink-soft)}
-  .plan-from{color:var(--ink-soft);text-decoration:line-through;font-size:.9rem}
-  .plan-divider{height:1px;background:var(--line);margin-bottom:18px}
-  .plan-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
-  .plan-features li{font-size:.92rem;display:flex;gap:9px}
-  .ft-yes{color:var(--verde);font-weight:700;flex-shrink:0}
-  .plan-note{font-size:.72rem;color:var(--ink-soft);text-align:center;margin-top:10px}
 
-  /* GARANTIA */
-  #garantia{background:var(--verde);color:#e9f2ec;text-align:center}
-  .garantia-icon{width:44px;height:44px;margin:0 auto 12px;color:var(--gold-pale)}
-  .garantia-icon svg{display:block;width:100%;height:100%}
-  #garantia h2{color:#fdf2df}
-  #garantia p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;max-width:600px;margin:0 auto;color:#dcebe1}
-  .garantia-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
-  .garantia-tag{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.05em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:999px}
-
-  /* CTA FINAL E FOOTER */
-  #cta-final{background:var(--vinho);color:#fdf2df;text-align:center}
-  #cta-final h2{color:#fdf2df}
-  #cta-final .lead{color:#e3c9a3}
+  /* FOOTER */
   footer{background:var(--ink);color:#c9bda4;padding:36px 20px;text-align:center}
   .footer-brand h3{font-family:'Cinzel',serif;color:#fdf2df;font-size:1.15rem;margin-bottom:6px}
   .footer-bottom{border-top:1px solid rgba(201,189,164,.15);margin-top:22px;padding-top:18px;max-width:640px;margin-inline:auto;font-size:.76rem;color:#8a7e68}
@@ -342,94 +277,7 @@
   </div>
 </section>
 
-<section id="recebe">
-  <div class="wrap">
-    <span class="kicker">Aprendizado por projetos</span>
-    <h2>Um curso para aprender <em>criando</em></h2>
-    <p class="lead">Escolha um santinho e acompanhe cada etapa escrita, do preparo dos materiais &agrave; finaliza&ccedil;&atilde;o da pe&ccedil;a.</p>
-    <div class="receive-grid">
-      <div class="receive-card">
-        <span class="receive-n">+150</span>
-        <strong>Projetos cat&oacute;licos</strong>
-        <p>Nossa Senhora, santos, anjos e personagens religiosos para aprender enquanto voc&ecirc; cria.</p>
-      </div>
-      <div class="receive-card">
-        <span class="receive-n">Escrito</span>
-        <strong>Aprendizado no seu ritmo</strong>
-        <p>Receitas completas e materiais digitais organizados para consultar sempre que precisar.</p>
-      </div>
-      <div class="receive-card">
-        <span class="receive-n">Completo</span>
-        <strong>Do preparo ao acabamento</strong>
-        <p>Materiais, pontos utilizados, execu&ccedil;&atilde;o, montagem e finaliza&ccedil;&atilde;o de cada pe&ccedil;a.</p>
-      </div>
-      <div class="receive-card">
-        <span class="receive-n">&infin;</span>
-        <strong>Acesso vital&iacute;cio</strong>
-        <p>Receba as instru&ccedil;&otilde;es por e-mail ap&oacute;s a aprova&ccedil;&atilde;o e estude quando quiser.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="vantagens">
-  <div class="wrap">
-    <span class="kicker">Aprendizado no seu ritmo</span>
-    <h2>Como funciona <em>o curso</em></h2>
-    <p class="lead">Voc&ecirc; aprende pela pr&aacute;tica: cada santinho &eacute; um projeto completo para acompanhar do primeiro passo &agrave; pe&ccedil;a finalizada.</p>
-    <div class="vant-grid">
-      <div class="vant-card">
-        <span class="vant-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h20v14H6z"/><path d="M10 7h12M11 14h10M11 18h7"/></svg></span>
-        <strong>1. Escolha o santinho</strong>
-        <p>Entre no acervo organizado e escolha qual pe&ccedil;a deseja produzir primeiro.</p>
-      </div>
-      <div class="vant-card">
-        <span class="vant-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><path d="M16 9v7l5 3"/></svg></span>
-        <strong>2. Prepare os materiais</strong>
-        <p>Consulte a lista de materiais e os pontos utilizados naquele projeto.</p>
-      </div>
-      <div class="vant-card">
-        <span class="vant-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4c-6 4-10 4-10 4v9c0 7 4 10 10 11 6-1 10-4 10-11v-9s-4 0-10-4z"/><path d="M11 16l3 3 7-7"/></svg></span>
-        <strong>3. Aprenda criando</strong>
-        <p>Siga as orienta&ccedil;&otilde;es escritas e avance na execu&ccedil;&atilde;o no seu pr&oacute;prio ritmo.</p>
-      </div>
-      <div class="vant-card">
-        <span class="vant-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4c-6 4-10 4-10 4v9c0 7 4 10 10 11 6-1 10-4 10-11v-9s-4 0-10-4z"/><path d="M11 16l3 3 7-7"/></svg></span>
-        <strong>4. Monte e finalize</strong>
-        <p>Acompanhe a montagem e o acabamento at&eacute; concluir o seu amigurumi.</p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:28px"><a href="#ofertas" class="btn">Quero aprender criando</a></div>
-  </div>
-</section>
-
-<section id="filtro">
-  <div class="wrap">
-    <span class="kicker">Veja se combina com voc&ecirc;</span>
-    <h2>Esse curso &eacute; para voc&ecirc;?</h2>
-    <div class="filtro-grid">
-      <div class="filtro-box yes">
-        <h3>Perfeito para voc&ecirc; se&hellip;</h3>
-        <ul>
-          <li>Quer aprender pela pr&aacute;tica e criar pe&ccedil;as de f&eacute;</li>
-          <li>Gosta de acompanhar receitas completas e materiais escritos</li>
-          <li>Quer praticar no pr&oacute;prio ritmo, sem hor&aacute;rios ou prazos</li>
-          <li>Busca presentes e pe&ccedil;as devocionais &uacute;nicas</li>
-        </ul>
-      </div>
-      <div class="filtro-box no">
-        <h3>N&atilde;o &eacute; para voc&ecirc; se&hellip;</h3>
-        <ul>
-          <li>N&atilde;o gosta de aprender acompanhando materiais escritos</li>
-          <li>N&atilde;o tem interesse em pe&ccedil;as de tem&aacute;tica religiosa</li>
-          <li>Espera resultado sem nenhuma pr&aacute;tica</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEÇÃO DO CARROSSEL CONECTADA COM AS IMAGENS DA RAIZ -->
+<!-- SEÇÃO DO CARROSSEL REFEITA COM AS IMAGENS DA RAIZ -->
 <section id="pecas">
   <div class="wrap">
     <span class="kicker">Uma amostra do curso</span>
@@ -437,7 +285,7 @@
     <p class="lead">Estes s&atilde;o apenas alguns exemplos. O curso re&uacute;ne mais de 150 projetos escritos de santos, anjos e personagens cat&oacute;licos.</p>
     <div class="pieces-shell">
       <div class="pieces-viewport" id="piecesViewport" aria-label="Galeria de santinhos em movimento">
-        <div class="pieces" id="piecesTrack" style="display: flex; gap: 16px; width: max-content; animation: piecesMarquee 22s linear infinite;">
+        <div class="pieces is-ready" id="piecesTrack">
           <div class="piece"><img class="piece-img" src="nossa-senhora-1.webp" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora</b></div>
           <div class="piece"><img class="piece-img" src="nossa-senhora-fatima.webp" alt="Nossa Senhora de Fátima em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora de F&aacute;tima</b></div>
           <div class="piece"><img class="piece-img" src="sao-jose.webp" alt="São José em amigurumi" width="304" height="600" decoding="async"><b>S&atilde;o Jos&eacute;</b></div>
@@ -446,7 +294,7 @@
           <div class="piece"><img class="piece-img" src="nossa-senhora-gracas.webp" alt="Nossa Senhora das Graças em amigurumi" width="580" height="580" decoding="async"><b>Nossa Senhora das Gra&ccedil;as</b></div>
           <div class="piece"><img class="piece-img" src="anjo-2.webp" alt="Anjo católico em amigurumi" width="456" height="580" decoding="async"><b>Anjo da Guarda</b></div>
           <div class="piece"><img class="piece-img" src="anjo-3.webp" alt="Anjo de fé em amigurumi" width="600" height="600" decoding="async"><b>Anjo de F&eacute;</b></div>
-          <!-- Duplicado para efeito de loop contínuo -->
+          <!-- Duplicado para loop contínuo perfeito -->
           <div class="piece" aria-hidden="true"><img class="piece-img" src="nossa-senhora-1.webp" alt="Nossa Senhora em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora</b></div>
           <div class="piece" aria-hidden="true"><img class="piece-img" src="nossa-senhora-fatima.webp" alt="Nossa Senhora de Fátima em amigurumi" width="600" height="600" decoding="async"><b>Nossa Senhora de F&aacute;tima</b></div>
           <div class="piece" aria-hidden="true"><img class="piece-img" src="sao-jose.webp" alt="São José em amigurumi" width="304" height="600" decoding="async"><b>S&atilde;o Jos&eacute;</b></div>
@@ -462,79 +310,32 @@
   </div>
 </section>
 
-<section id="roi">
-  <div class="wrap">
-    <span class="kicker">Uma habilidade, novas possibilidades</span>
-    <h2>Crie para sua f&eacute;, para presentear ou vender</h2>
-    <p class="lead">Conforme pratica, seus santinhos podem se transformar em presentes cheios de significado e novas op&ccedil;&otilde;es para encomendas.</p>
-    <div class="roi-box">
-      <div class="roi-item"><span class="v">R$19,90</span><span class="l">Investimento no curso</span></div>
-      <span class="roi-arrow">&rarr;</span>
-      <div class="roi-item"><span class="v">R$3.600</span><span class="l">Poss&iacute;vel /m&ecirc;s</span></div>
-    </div>
-    <p class="roi-disclaimer">Exemplo ilustrativo de precifica&ccedil;&atilde;o (12 pe&ccedil;as/semana a R$75). Resultados variam de pessoa para pessoa e dependem de dedica&ccedil;&atilde;o, qualidade das pe&ccedil;as e demanda local. N&atilde;o h&aacute; garantia de renda.</p>
-  </div>
-</section>
-
 <section id="bonus">
   <div class="wrap">
     <span class="kicker">Inclu&iacute;dos no Curso + Acervo Completo</span>
     <h2>Extens&otilde;es <em>especiais</em></h2>
-    <p class="lead">Quatro materiais escritos para apoiar seus primeiros passos, melhorar o acabamento e ampliar suas possibilidades de cria&ccedil;&atilde;o.</p>
     <div class="bonus-grid four">
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 1</span>
-        <img class="bonus-img" src="bonus-primeiros-passos.webp" alt="Primeiros Passos no Amigurumi" width="800" height="800" loading="lazy" decoding="async">
-        <div class="bonus-body">
-          <h3>Primeiros Passos no Amigurumi</h3>
-          <p>Materiais, pontos, abrevia&ccedil;&otilde;es, montagem e acabamento para come&ccedil;ar com seguran&ccedil;a.</p>
-          <div class="bonus-price"><span class="bonus-old">Vendido separadamente</span><span class="bonus-free">GR&Aacute;TIS</span></div>
-        </div>
+        <img class="bonus-img" src="bonus-primeiros-passos.webp" alt="Primeiros Passos" width="800" height="800" loading="lazy" decoding="async">
+        <div class="bonus-body"><h3>Primeiros Passos no Amigurumi</h3></div>
       </div>
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 2</span>
-        <img class="bonus-img" src="bonus-olhos-realistas.webp" alt="Guia de Olhos Realistas" width="800" height="800" loading="lazy" decoding="async">
-        <div class="bonus-body">
-          <h3>Guia de Olhos Realistas</h3>
-          <p>T&eacute;cnicas para criar express&otilde;es mais bonitas e valorizar o acabamento das suas pe&ccedil;as.</p>
-          <div class="bonus-price"><span class="bonus-old">Vendido separadamente</span><span class="bonus-free">GR&Aacute;TIS</span></div>
-        </div>
+        <img class="bonus-img" src="bonus-olhos-realistas.webp" alt="Olhos Realistas" width="800" height="800" loading="lazy" decoding="async">
+        <div class="bonus-body"><h3>Guia de Olhos Realistas</h3></div>
       </div>
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 3</span>
-        <img class="bonus-img" src="bonus-reversiveis.webp" alt="Cole&ccedil;&atilde;o de Amigurumis Revers&iacute;veis" width="800" height="800" loading="lazy" decoding="async">
-        <div class="bonus-body">
-          <h3>Amigurumis Revers&iacute;veis</h3>
-          <p>Receitas criativas que se transformam e revelam duas pe&ccedil;as diferentes.</p>
-          <div class="bonus-price"><span class="bonus-old">Vendido separadamente</span><span class="bonus-free">GR&Aacute;TIS</span></div>
-        </div>
+        <img class="bonus-img" src="bonus-reversiveis.webp" alt="Reversíveis" width="800" height="800" loading="lazy" decoding="async">
+        <div class="bonus-body"><h3>Amigurumis Revers&iacute;veis</h3></div>
       </div>
       <div class="bonus-card">
         <span class="bonus-tag">B&Ocirc;NUS 4</span>
-        <img class="bonus-img" src="bonus-sensoriais.webp" alt="Cole&ccedil;&atilde;o de Amigurumis Sensoriais" width="800" height="800" loading="lazy" decoding="async">
-        <div class="bonus-body">
-          <h3>Amigurumis Sensoriais</h3>
-          <p>Projetos com formas, texturas e elementos pensados para estimular e encantar.</p>
-          <div class="bonus-price"><span class="bonus-old">Vendido separadamente</span><span class="bonus-free">GR&Aacute;TIS</span></div>
-        </div>
+        <img class="bonus-img" src="bonus-sensoriais.webp" alt="Sensoriais" width="800" height="800" loading="lazy" decoding="async">
+        <div class="bonus-body"><h3>Amigurumis Sensoriais</h3></div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="acervo-geral">
-  <div class="wrap">
-    <span class="kicker">Exclusivo do Curso + Acervo Completo</span>
-    <h2>Amplie seu aprendizado com um universo de amigurumi</h2>
-    <p class="lead">Al&eacute;m dos santinhos cat&oacute;licos, o acesso Completo libera dezenas de cole&ccedil;&otilde;es escritas de bonecas, bichinhos, personagens e pe&ccedil;as tem&aacute;ticas.</p>
-    <div class="acervo-grid">
-      <div class="acervo-card"><img class="acervo-img" src="colecao-bonecas-bichinhos.webp" alt="Cole&ccedil;&atilde;o de bonecas e bichinhos" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Bonecas e bichinhos</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="colecao-harry-potter.webp" alt="Cole&ccedil;&atilde;o Harry Potter" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Cole&ccedil;&atilde;o Harry Potter</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="colecao-natalina.webp" alt="Temática natalina" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Tem&aacute;tica natalina</span></div></div>
-      <div class="acervo-card"><img class="acervo-img" src="colecao-personagens-desenhos.webp" alt="Personagens e desenhos" width="800" height="800" loading="lazy" decoding="async"><div class="acervo-overlay"><span class="acervo-n">+ mais</span><span class="acervo-l">Personagens e desenhos</span></div></div>
-    </div>
-    <p class="acervo-footnote">Mais variedade para praticar, presentear e criar novas pe&ccedil;as durante muito tempo.</p>
-    <div style="text-align:center;margin-top:20px"><a href="#ofertas" class="btn">Quero o Curso Completo</a></div>
   </div>
 </section>
 
@@ -547,14 +348,14 @@
         <div class="plan-name">Curso de Amigurumi Cat&oacute;lico</div>
         <div class="plan-pack">Curso B&aacute;sico &middot; +150 Santinhos</div>
         <div class="plan-price">R$19<small>,90 no Pix</small></div>
-        <a href="https://pay.cakto.com.br/3d7j6a6_1001007" class="btn btn-outline btn-block">&#128073; QUERO O CURSO B&Aacute;SICO</a>
+        <a href="link_checkout" class="btn btn-outline btn-block">&#128073; QUERO O CURSO B&Aacute;SICO</a>
       </div>
       <div class="plan-card pro">
         <span class="plan-star">MAIS ESCOLHIDO</span>
         <div class="plan-name">Curso de Amigurumi Cat&oacute;lico</div>
         <div class="plan-pack">Curso + Acervo Completo</div>
         <div class="plan-price">R$29<small>,90 &agrave; vista</small></div>
-        <a href="https://pay.cakto.com.br/zb3f7zi_1001053" class="btn btn-block">&#128073; QUERO O CURSO COMPLETO</a>
+        <a href="link_checkout" class="btn btn-block">&#128073; QUERO O CURSO COMPLETO</a>
       </div>
     </div>
   </div>

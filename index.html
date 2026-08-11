@@ -164,7 +164,10 @@
   .pieces-shell::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
   .pieces-shell::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
   .pieces-viewport{overflow:hidden;padding:4px 2px 14px}
-  .pieces{display:flex;gap:16px;width:max-content;animation:piecesMarquee 22s linear infinite;will-change:transform}
+  
+  /* CORREÇÃO AQUI: Garante visibilidade imediata sem depender de JS externo */
+  .pieces{display:flex;gap:16px;width:max-content;animation:piecesMarquee 22s linear infinite;opacity:1 !important;visibility:visible !important;will-change:transform}
+  
   @keyframes piecesMarquee{to{transform:translateX(calc(-50% - 8px))}}
   .piece{flex:0 0 164px;background:var(--white);border:1px solid var(--line);border-radius:7px;overflow:hidden;text-align:center;box-shadow:0 6px 18px rgba(36,26,16,.09)}
   @media(min-width:640px){.piece{flex-basis:210px}}
